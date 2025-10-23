@@ -1,0 +1,5 @@
+Added check to app/api/stripe/cancel-subscription/route.ts
+Added check to app/api/stripe/create-subscription/route.ts
+Added check to app/api/stripe/payment-methods/route.ts
+Added check to app/api/stripe/webhook/route.ts
+Added check to app/api/tracking/[trackingNumber]/route.ts

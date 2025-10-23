@@ -1,0 +1,44 @@
+
+> trial-transport@1.0.0 build
+> prisma generate && next build
+
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./node_modules/@prisma/client in 215ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+
+  ▲ Next.js 14.2.5
+  - Environments: .env
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/api/upload/route.ts
+Error: 
+  [31mx[0m Expression expected
+    ,-[[36;1;4m/workspace/trial-transport/app/api/upload/route.ts[0m:91:1]
+ [2m91[0m | 
+ [2m92[0m | export async function DELETE(request: NextRequest) {
+ [2m93[0m |           { status: 500 }
+ [2m94[0m |         )
+    : [31;1m        ^[0m
+ [2m95[0m |       }
+ [2m96[0m | 
+ [2m97[0m |         { status: 500 }
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/api/upload/route.ts
+
+
+> Build failed because of webpack errors

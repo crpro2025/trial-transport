@@ -1,0 +1,34 @@
+remote: error: GH013: Repository rule violations found for refs/heads/main.        
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   —————————————————————————————————————————        
+remote:     Resolve the following violations before pushing again        
+remote: 
+remote:     - Push cannot contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a blocked push        
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push        
+remote:             
+remote:             
+remote:       —— GitHub App Installation Access Token ——————————————        
+remote:        locations:        
+remote:          - commit: 5cd9a616192602a5d5d222c4e8b1e6f432bd9726        
+remote:            path: outputs/workspace_output_1761079176_1219.txt:2        
+remote:          - commit: 5cd9a616192602a5d5d222c4e8b1e6f432bd9726        
+remote:            path: outputs/workspace_output_1761079176_1219.txt:3        
+remote:          - commit: 5cd9a616192602a5d5d222c4e8b1e6f432bd9726        
+remote:            path: summarized_conversations/original_conversation_1761082524_8141.txt:149        
+remote:          - commit: 5cd9a616192602a5d5d222c4e8b1e6f432bd9726        
+remote:            path: summarized_conversations/original_conversation_1761082524_8141.txt:149        
+remote:          - commit: 5cd9a616192602a5d5d222c4e8b1e6f432bd9726        
+remote:            path: summarized_conversations/original_conversation_1761082524_8141.txt:167        
+remote:             
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.        
+remote:        https://github.com/crpro2025/trial-transport/security/secret-scanning/unblock-secret/34TKyoAqKBkOWaIz7G6KWHLytGr        
+remote:             
+remote: 
+remote: 
+To https://github.com/crpro2025/trial-transport.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/crpro2025/trial-transport.git'

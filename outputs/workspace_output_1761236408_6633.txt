@@ -1,0 +1,51 @@
+        const deletedSubscription = event.data.object as Stripe.Subscription
+        await handleSubscriptionCancellation(deletedSubscription)
+        break
+
+      case 'invoice.paid':
+        const invoice = event.data.object as Stripe.Invoice
+        await handleInvoicePaid(invoice)
+        break
+
+      case 'invoice.payment_failed':
+        const failedInvoice = event.data.object as Stripe.Invoice
+        await handleInvoicePaymentFailed(failedInvoice)
+        break
+
+      default:
+        console.log(`Unhandled event type: ${event.type}`)
+    }
+
+    return NextResponse.json({ received: true })
+
+  } catch (error) {
+    console.error('Webhook error:', error)
+    return NextResponse.json(
+      { error: 'Webhook handler failed' },
+      { status: 500 }
+    )
+  }
+}
+
+async function handlePaymentSuccess(paymentIntent: Stripe.PaymentIntent) {
+  const userId = paymentIntent.metadata.userId
+  const shipmentId = paymentIntent.metadata.shipmentId
+
+  if (shipmentId) {
+    // Update shipment payment status
+    await prisma.shipment.update({
+      where: { id: shipmentId },
+      data: {
+        // Add payment status field if needed
+      }
+    })
+  }
+
+  // Create notification
+  if (userId) {
+    await prisma.notification.create({
+      data: {
+        userId,
+        type: 'PAYMENT_RECEIVED',
+        title: 'Payment Successful',
+        message: `Payment of $${(paymentIntent.amount / 100).toFixed(2)} was successful`,

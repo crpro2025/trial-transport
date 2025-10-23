@@ -1,0 +1,35 @@
+
+> trial-transport@1.0.0 build
+> prisma generate && next build
+
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./node_modules/@prisma/client in 285ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+  ▲ Next.js 14.2.5
+  - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./lib/auth-config.ts:8:26
+Type error: Argument of type 'PrismaClient<PrismaClientOptions, never, DefaultArgs> | null' is not assignable to parameter of type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+  Type 'null' is not assignable to type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+
+[0m [90m  6 |[39m[0m
+[0m [90m  7 |[39m [36mexport[39m [36mconst[39m authOptions[33m:[39m [33mNextAuthOptions[39m [33m=[39m {[0m
+[0m[31m[1m>[22m[39m[90m  8 |[39m   adapter[33m:[39m [33mPrismaAdapter[39m(prisma)[33m,[39m[0m
+[0m [90m    |[39m                          [31m[1m^[22m[39m[0m
+[0m [90m  9 |[39m   providers[33m:[39m [[0m
+[0m [90m 10 |[39m     [33mCredentialsProvider[39m({[0m
+[0m [90m 11 |[39m       name[33m:[39m [32m'Credentials'[39m[33m,[39m[0m

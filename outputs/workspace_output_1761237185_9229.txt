@@ -1,0 +1,3 @@
+[main be368d7] Fix deployment errors: Add null checks for Prisma, Stripe, and Pusher - Build successful
+ 24 files changed, 280 insertions(+), 6 deletions(-)
+ create mode 100644 trial-transport/lib/api-helpers.ts

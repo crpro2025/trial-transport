@@ -1,0 +1,3 @@
+-rw-r--r-- 1 root root  353 Oct 23 16:53 next.config.js
+-rw-r--r-- 1 root root 1413 Oct 23 16:53 package.json
+-rw-r--r-- 1 root root  597 Oct 23 16:53 tsconfig.json

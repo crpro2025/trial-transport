@@ -1,0 +1,190 @@
+
+> trial-transport@1.0.0 build
+> prisma generate && next build
+
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./node_modules/@prisma/client in 289ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+
+  ▲ Next.js 14.2.5
+  - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+   Generating static pages (0/57) ...
+Profile fetch error: n [Error]: Dynamic server usage: Route /api/users/profile couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+    at l (/workspace/trial-transport/.next/server/chunks/8948.js:1:37249)
+    at d (/workspace/trial-transport/.next/server/chunks/9637.js:30:27522)
+    at s (/workspace/trial-transport/.next/server/chunks/9637.js:30:20511)
+    at l (/workspace/trial-transport/.next/server/app/api/users/profile/route.js:1:1351)
+    at /workspace/trial-transport/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:36264
+    at /workspace/trial-transport/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+    at NoopContextManager.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854) {
+  description: "Route /api/users/profile couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+Analytics fetch error: n [Error]: Dynamic server usage: Route /api/analytics/dashboard couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+    at l (/workspace/trial-transport/.next/server/chunks/8948.js:1:37249)
+    at d (/workspace/trial-transport/.next/server/chunks/9637.js:30:27522)
+    at s (/workspace/trial-transport/.next/server/chunks/9637.js:30:20511)
+    at p (/workspace/trial-transport/.next/server/app/api/analytics/dashboard/route.js:1:1339)
+    at /workspace/trial-transport/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:36264
+    at /workspace/trial-transport/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+    at NoopContextManager.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854) {
+  description: "Route /api/analytics/dashboard couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+Credit balance fetch error: n [Error]: Dynamic server usage: Route /api/credits/balance couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+    at l (/workspace/trial-transport/.next/server/chunks/8948.js:1:37249)
+    at d (/workspace/trial-transport/.next/server/chunks/9637.js:30:27522)
+    at s (/workspace/trial-transport/.next/server/chunks/9637.js:30:20511)
+    at u (/workspace/trial-transport/.next/server/app/api/credits/balance/route.js:1:1341)
+    at /workspace/trial-transport/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:36264
+    at /workspace/trial-transport/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+    at NoopContextManager.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854) {
+  description: "Route /api/credits/balance couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+Earnings report error: n [Error]: Dynamic server usage: Route /api/driver/earnings-report couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+    at l (/workspace/trial-transport/.next/server/chunks/8948.js:1:37249)
+    at d (/workspace/trial-transport/.next/server/chunks/9637.js:30:27522)
+    at s (/workspace/trial-transport/.next/server/chunks/9637.js:30:20511)
+    at l (/workspace/trial-transport/.next/server/app/api/driver/earnings-report/route.js:1:1341)
+    at /workspace/trial-transport/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:36264
+    at /workspace/trial-transport/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+    at NoopContextManager.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/workspace/trial-transport/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854) {
+  description: "Route /api/driver/earnings-report couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+   Generating static pages (14/57) 
+   Generating static pages (28/57) 
+prisma:warn In production, we recommend using `prisma generate --no-engine` (See: `prisma generate --help`)
+   Generating static pages (42/57) 
+prisma:error 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Cannot fetch data from service:
+fetch failed
+ ✓ Generating static pages (57/57)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    8.44 kB         105 kB
+├ ○ /_not-found                          876 B            88 kB
+├ ○ /about                               3.66 kB         100 kB
+├ ○ /admin/analytics                     2.69 kB         105 kB
+├ ○ /admin/billing                       2.72 kB         105 kB
+├ ○ /admin/dashboard                     5.56 kB        92.7 kB
+├ ○ /admin/profile                       2.39 kB         105 kB
+├ ○ /admin/shipments                     6.54 kB        93.7 kB
+├ ○ /admin/users                         5.23 kB        92.4 kB
+├ ○ /ai-features                         5.03 kB         101 kB
+├ ○ /analytics                           3.45 kB        97.4 kB
+├ ○ /api-marketplace                     3.17 kB        97.1 kB
+├ ƒ /api/analytics/dashboard             0 B                0 B
+├ ƒ /api/auth/[...nextauth]              0 B                0 B
+├ ƒ /api/credits/allocate                0 B                0 B
+├ ƒ /api/credits/balance                 0 B                0 B
+├ ƒ /api/credits/use                     0 B                0 B
+├ ƒ /api/driver/earnings-report          0 B                0 B
+├ ƒ /api/health                          0 B                0 B
+├ ƒ /api/messages                        0 B                0 B
+├ ƒ /api/messages/[id]/read              0 B                0 B
+├ ƒ /api/notifications                   0 B                0 B
+├ ƒ /api/pusher/auth                     0 B                0 B
+├ ƒ /api/shipments                       0 B                0 B
+├ ƒ /api/shipments/[id]                  0 B                0 B
+├ ƒ /api/stripe/cancel-subscription      0 B                0 B
+├ ƒ /api/stripe/create-payment-intent    0 B                0 B
+├ ƒ /api/stripe/create-subscription      0 B                0 B
+├ ƒ /api/stripe/payment-methods          0 B                0 B
+├ ƒ /api/stripe/webhook                  0 B                0 B
+├ ƒ /api/tracking/[trackingNumber]       0 B                0 B
+├ ƒ /api/upload                          0 B                0 B
+├ ƒ /api/users/profile                   0 B                0 B
+├ ƒ /api/users/register                  0 B                0 B
+├ ○ /driver/availability                 2.84 kB         105 kB
+├ ○ /driver/available                    2.65 kB        94.9 kB
+├ ○ /driver/dashboard                    5.59 kB        99.5 kB
+├ ○ /driver/earnings                     2.73 kB         105 kB
+├ ○ /driver/messages                     2.35 kB         105 kB
+├ ○ /driver/profile                      6.04 kB        93.2 kB
+├ ○ /driver/profile-enhanced             5.63 kB         108 kB
+├ ○ /driver/training                     14.2 kB         101 kB
+├ ○ /exit-strategy                       3.69 kB         100 kB
+├ ○ /investors                           4.26 kB         101 kB
+├ ƒ /investors/documents/[slug]          7.86 kB          95 kB
+├ ○ /login                               3.39 kB        97.3 kB
+├ ○ /pricing                             4 kB            100 kB
+├ ○ /register                            4.72 kB        98.7 kB
+├ ○ /roadmap                             3.62 kB         100 kB
+├ ○ /shipper/billing                     2.4 kB          105 kB
+├ ○ /shipper/billing/payment-methods     2.21 kB         104 kB
+├ ○ /shipper/bulk-create                 3.32 kB         106 kB
+├ ○ /shipper/calculator                  3.54 kB        90.7 kB
+├ ○ /shipper/create-shipment             4.4 kB         96.6 kB
+├ ○ /shipper/dashboard                   5.34 kB        99.3 kB
+├ ○ /shipper/messages                    2.31 kB         105 kB
+├ ○ /shipper/profile                     2.76 kB         105 kB
+├ ○ /shipper/shipments                   5.03 kB        92.2 kB
+├ ƒ /shipper/shipments/[id]              3.32 kB         106 kB
+├ ○ /shipper/templates                   5.2 kB         92.3 kB
+├ ƒ /track/[id]                          3.52 kB        99.9 kB
+└ ○ /white-label                         3.29 kB        97.2 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/7023-a05991f544ec8242.js      31.5 kB
+  ├ chunks/fd9d1056-553e66303c45b91f.js  53.6 kB
+  └ other shared chunks (total)          1.96 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

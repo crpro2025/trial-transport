@@ -1,0 +1,20 @@
+total 224
+drwxr-xr-x 18 root root  4096 Oct 23 16:53 .
+drwxr-xr-x  1 root root  4096 Oct 23 16:53 ..
+drwxr-xr-x  2 root root    30 Oct 23 16:53 about
+drwxr-xr-x  8 root root   128 Oct 23 16:53 admin
+drwxr-xr-x  2 root root    30 Oct 23 16:53 ai-features
+drwxr-xr-x  2 root root    30 Oct 23 16:53 analytics
+drwxr-xr-x 15 root root  4096 Oct 23 16:53 api
+drwxr-xr-x  2 root root    30 Oct 23 16:53 api-marketplace
+drwxr-xr-x 10 root root   183 Oct 23 16:53 driver
+drwxr-xr-x  2 root root    30 Oct 23 16:53 exit-strategy
+-rw-r--r--  1 root root  9493 Oct 23 16:53 globals-futuristic.css
+-rw-r--r--  1 root root  1682 Oct 23 16:53 globals.css
+drwxr-xr-x  3 root root    51 Oct 23 16:53 investors
+-rw-r--r--  1 root root   901 Oct 23 16:53 layout.tsx
+drwxr-xr-x  2 root root    30 Oct 23 16:53 login
+-rw-r--r--  1 root root 48601 Oct 23 16:53 page-backup-realistic.tsx
+-rw-r--r--  1 root root 18518 Oct 23 16:53 page-realistic-financial-section.tsx
+-rw-r--r--  1 root root 62409 Oct 23 16:53 page.tsx
+-rw-r--r--  1 root root 50147 Oct 23 16:53 page.tsx.backup

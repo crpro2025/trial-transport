@@ -1,0 +1,34 @@
+
+> trial-transport@1.0.0 build
+> prisma generate && next build
+
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./node_modules/@prisma/client in 215ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+  ▲ Next.js 14.2.5
+  - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./app/api/stripe/webhook/route.ts:105:11
+Type error: 'prisma' is possibly 'null'.
+
+[0m [90m 103 |[39m   [36mif[39m (shipmentId) {[0m
+[0m [90m 104 |[39m     [90m// Update shipment payment status[39m[0m
+[0m[31m[1m>[22m[39m[90m 105 |[39m     [36mawait[39m prisma[33m.[39mshipment[33m.[39mupdate({[0m
+[0m [90m     |[39m           [31m[1m^[22m[39m[0m
+[0m [90m 106 |[39m       where[33m:[39m { id[33m:[39m shipmentId }[33m,[39m[0m
+[0m [90m 107 |[39m       data[33m:[39m {[0m
+[0m [90m 108 |[39m         [90m// Add payment status field if needed[39m[0m

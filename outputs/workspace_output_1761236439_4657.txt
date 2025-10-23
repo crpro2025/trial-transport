@@ -1,0 +1,34 @@
+
+> trial-transport@1.0.0 build
+> prisma generate && next build
+
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./node_modules/@prisma/client in 280ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+  ▲ Next.js 14.2.5
+  - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./app/api/upload/route.ts:14:10
+Type error: Cannot find name 'prisma'.
+
+[0m [90m 12 |[39m[0m
+[0m [90m 13 |[39m [36mexport[39m [36masync[39m [36mfunction[39m [33mPOST[39m(request[33m:[39m [33mNextRequest[39m) {[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m     [36mif[39m ([33m![39mprisma) {[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m       [36mif[39m ([33m![39mprisma) {[0m
+[0m [90m 16 |[39m         [36mreturn[39m [33mNextResponse[39m[33m.[39mjson([0m
+[0m [90m 17 |[39m           { error[33m:[39m [32m"Database not configured"[39m }[33m,[39m[0m
