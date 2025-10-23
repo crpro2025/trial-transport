@@ -12,6 +12,13 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
 
 export async function POST(request: NextRequest) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     if (!stripe) {
       return NextResponse.json(
         { error: 'Stripe not configured' },
@@ -25,6 +32,13 @@ export async function POST(request: NextRequest) {
     let event: Stripe.Event
 
     try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
     } catch (err) {
       console.error('Webhook signature verification failed:', err)
@@ -83,6 +97,7 @@ export async function POST(request: NextRequest) {
 }
 
 async function handlePaymentSuccess(paymentIntent: Stripe.PaymentIntent) {
+  if (!prisma) return
   const userId = paymentIntent.metadata.userId
   const shipmentId = paymentIntent.metadata.shipmentId
 
@@ -111,6 +126,7 @@ async function handlePaymentSuccess(paymentIntent: Stripe.PaymentIntent) {
 }
 
 async function handlePaymentFailure(paymentIntent: Stripe.PaymentIntent) {
+  if (!prisma) return
   const userId = paymentIntent.metadata.userId
 
   if (userId) {
@@ -127,6 +143,7 @@ async function handlePaymentFailure(paymentIntent: Stripe.PaymentIntent) {
 }
 
 async function handleSubscriptionUpdate(subscription: Stripe.Subscription) {
+  if (!prisma) return
   const userId = subscription.metadata.userId
 
   if (userId) {
@@ -159,6 +176,7 @@ async function handleSubscriptionUpdate(subscription: Stripe.Subscription) {
 }
 
 async function handleSubscriptionCancellation(subscription: Stripe.Subscription) {
+  if (!prisma) return
   const userId = subscription.metadata.userId
 
   if (userId) {
@@ -188,6 +206,7 @@ async function handleSubscriptionCancellation(subscription: Stripe.Subscription)
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
+  if (!prisma) return
   const userId = invoice.metadata?.userId
 
   if (userId) {
@@ -214,6 +233,7 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
 }
 
 async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
+  if (!prisma) return
   const userId = invoice.metadata?.userId
 
   if (userId) {

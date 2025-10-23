@@ -66,6 +66,13 @@ function calculatePricing(priority: string, distance: number = 50) {
 }
 
 export async function GET(request: NextRequest) {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "Database not configured" },
+        { status: 500 }
+      )
+    }
+
   try {
     const session = await getServerSession(authOptions)
 
@@ -160,6 +167,20 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+    if (!prisma) {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
+      return NextResponse.json(
+        { error: "Database not configured" },
+        { status: 500 }
+      )
+    }
+
   try {
     const session = await getServerSession(authOptions)
 

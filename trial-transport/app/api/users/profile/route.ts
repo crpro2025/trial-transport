@@ -4,6 +4,13 @@ import { authOptions } from '@/lib/auth-config'
 import prisma from '@/lib/prisma'
 
 export async function GET(request: NextRequest) {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "Database not configured" },
+        { status: 500 }
+      )
+    }
+
   try {
     const session = await getServerSession(authOptions)
 
@@ -45,6 +52,13 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "Database not configured" },
+        { status: 500 }
+      )
+    }
+
   try {
     const session = await getServerSession(authOptions)
 

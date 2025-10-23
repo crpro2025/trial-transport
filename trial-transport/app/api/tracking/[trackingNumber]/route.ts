@@ -6,6 +6,13 @@ export async function GET(
   { params }: { params: { trackingNumber: string } }
 ) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const shipment = await prisma.shipment.findUnique({
       where: { trackingNumber: params.trackingNumber },
       include: {
@@ -69,6 +76,13 @@ export async function POST(
   { params }: { params: { trackingNumber: string } }
 ) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const body = await request.json()
     const { latitude, longitude, temperature, humidity } = body
 

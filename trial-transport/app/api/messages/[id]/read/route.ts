@@ -8,6 +8,13 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {

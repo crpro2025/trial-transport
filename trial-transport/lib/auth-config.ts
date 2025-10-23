@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs'
 import prisma from '@/lib/prisma'
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  adapter: prisma ? PrismaAdapter(prisma) : undefined,
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -16,6 +16,10 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error('Email and password required')
+        }
+
+        if (!prisma) {
+          throw new Error('Database not configured')
         }
 
         const user = await prisma.user.findUnique({

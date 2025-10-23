@@ -13,6 +13,13 @@ import {
 // Get payment methods
 export async function GET(request: NextRequest) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {
@@ -68,6 +75,13 @@ export async function GET(request: NextRequest) {
 // Add payment method
 export async function POST(request: NextRequest) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {
@@ -160,6 +174,13 @@ export async function POST(request: NextRequest) {
 // Remove payment method
 export async function DELETE(request: NextRequest) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {

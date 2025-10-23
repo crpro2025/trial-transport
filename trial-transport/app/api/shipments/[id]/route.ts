@@ -8,6 +8,13 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {
@@ -79,6 +86,13 @@ export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
   try {
     const session = await getServerSession(authOptions)
 
@@ -204,6 +218,13 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
+      if (!prisma) {
+        return NextResponse.json(
+          { error: "Database not configured" },
+          { status: 500 }
+        )
+      }
+
   try {
     const session = await getServerSession(authOptions)
 

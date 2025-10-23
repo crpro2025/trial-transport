@@ -18,6 +18,13 @@ const registerSchema = z.object({
 })
 
 export async function POST(request: NextRequest) {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "Database not configured" },
+        { status: 500 }
+      )
+    }
+
   try {
     const body = await request.json()
     const validatedData = registerSchema.parse(body)
