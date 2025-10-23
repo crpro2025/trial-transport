@@ -48,16 +48,16 @@ export async function GET(request: NextRequest) {
       take: 10
     })
 
-    // Calculate expiring credits (90 days)
-    const ninetyDaysFromNow = new Date()
-    ninetyDaysFromNow.setDate(ninetyDaysFromNow.getDate() + 90)
+    // Calculate expiring credits (end of month)
+    const endOfMonth = new Date()
+    endOfMonth.setMonth(endOfMonth.getMonth() + 1); endOfMonth.setDate(0); endOfMonth.setHours(23, 59, 59, 999)
 
     const expiringCredits = await prisma.creditTransaction.aggregate({
       where: {
         shipperId: shipperProfile.userId,
         type: 'ALLOCATION',
         expiresAt: {
-          lte: ninetyDaysFromNow,
+          lte: endOfMonth,
           gte: new Date()
         }
       },

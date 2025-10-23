@@ -1,0 +1,15 @@
+COMPLETE_INVESTOR_PITCH_DECK.md:- Benefits (after 90 days)
+HYBRID_PRICING_MIGRATION.md:- ✅ Credits roll over 90 days
+INVESTOR_PITCH_DECK_FINAL.md:- **Mid-Market:** 60-90 days
+PRICING_STRATEGY_ANALYSIS.md:4. **Flexibility** - credits roll over 90 days
+PRICING_STRATEGY_ANALYSIS.md:- Roll over unused credits (90-day expiry)
+app/api/stripe/create-subscription/route.ts:      // Calculate expiration date (90 days)
+app/api/credits/balance/route.ts:    // Calculate expiring credits (90 days)
+app/pricing/page.tsx:        'Credits roll over 90 days',
+app/pricing/page.tsx:        'Credits roll over 90 days',
+app/pricing/page.tsx:        'Credits roll over 90 days',
+app/pricing/page.tsx:            <span className="text-blue-400 font-semibold">Credits roll over for 90 days!</span>
+app/pricing/page.tsx:                Your monthly credits automatically apply to deliveries. Credits roll over for 90 days!
+node_modules/stripe/types/Climate/OrdersResource.d.ts:         * provides 90 days advance notice and refunds the amount_total.
+node_modules/stripe/types/Tax/TransactionsResource.d.ts:         * Creates a Tax Transaction from a calculation, if that calculation hasn't expired. Calculations expire after 90 days.
+public/docs/INVESTOR_PITCH_DECK_FINAL.md:- **Mid-Market:** 60-90 days

@@ -1,0 +1,7 @@
+
+    // Calculate expiring credits (90 days)
+    const ninetyDaysFromNow = new Date()
+    ninetyDaysFromNow.setDate(ninetyDaysFromNow.getDate() + 90)
+
+    const expiringCredits = await prisma.creditTransaction.aggregate({
+      where: {

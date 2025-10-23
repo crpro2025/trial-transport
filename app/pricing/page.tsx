@@ -36,7 +36,7 @@ export default function PricingPage() {
       features: [
         '$250 in monthly credits',
         '15% off ALL deliveries',
-        'Credits roll over 90 days',
+        'Monthly credits (expire end of month)',
         'AI driver matching',
         'Priority tracking',
         'Advanced reporting',
@@ -56,7 +56,7 @@ export default function PricingPage() {
       features: [
         '$750 in monthly credits',
         '20% off ALL deliveries',
-        'Credits roll over 90 days',
+        'Monthly credits (expire end of month)',
         'Advanced AI optimization',
         'Multi-site coordination',
         'Predictive analytics',
@@ -78,7 +78,7 @@ export default function PricingPage() {
       features: [
         '$2,000 in monthly credits',
         '25% off ALL deliveries',
-        'Credits roll over 90 days',
+        'Monthly credits (expire end of month)',
         'Full AI suite with ML',
         'White-glove service',
         'Global multi-site support',
@@ -157,7 +157,7 @@ export default function PricingPage() {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Choose a plan that fits your needs. Get monthly credits + ongoing discounts on all deliveries.
             <br />
-            <span className="text-blue-400 font-semibold">Credits roll over for 90 days!</span>
+            <span className="text-blue-400 font-semibold">Credits expire at end of billing month!</span>
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -330,7 +330,7 @@ export default function PricingPage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Use Credits First</h3>
               <p className="text-gray-300">
-                Your monthly credits automatically apply to deliveries. Credits roll over for 90 days!
+                Your monthly credits automatically apply to deliveries. Credits expire at end of billing month!
               </p>
             </div>
 

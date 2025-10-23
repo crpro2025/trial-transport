@@ -1,0 +1,21 @@
+        { error: 'Plan required' },
+        { status: 400 }
+      )
+    }
+
+    // Get user details
+    const user = await prisma.user.findUnique({
+      where: { id: session.user.id },
+      include: { shipperProfile: true }
+    })
+
+    if (!user || !user.shipperProfile) {
+      return NextResponse.json(
+        { error: 'User not found' },
+        { status: 404 }
+      )
+    }
+
+    // Get or create Stripe customer
+    const customer = await getOrCreateStripeCustomer(
+      user.id,

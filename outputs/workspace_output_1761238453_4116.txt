@@ -1,0 +1,193 @@
+[main c92c39f] Move Next.js app to root directory for Vercel deployment
+ 192 files changed, 1858 insertions(+), 73 deletions(-)
+ create mode 100644 .env
+ rename trial-transport/.env.example => .env.example (100%)
+ rename trial-transport/.env.production.template => .env.production.template (100%)
+ rename trial-transport/README.md => README.md (100%)
+ rename {trial-transport/app => app}/about/page.tsx (100%)
+ rename {trial-transport/app => app}/admin/analytics/page.tsx (100%)
+ rename {trial-transport/app => app}/admin/billing/page.tsx (100%)
+ rename {trial-transport/app => app}/admin/dashboard/page.tsx (100%)
+ rename {trial-transport/app => app}/admin/profile/page.tsx (100%)
+ rename {trial-transport/app => app}/admin/shipments/page.tsx (100%)
+ rename {trial-transport/app => app}/admin/users/page.tsx (100%)
+ rename {trial-transport/app => app}/ai-features/page.tsx (100%)
+ rename {trial-transport/app => app}/analytics/page.tsx (100%)
+ rename {trial-transport/app => app}/api-marketplace/page.tsx (100%)
+ rename {trial-transport/app => app}/api/analytics/dashboard/route.ts (100%)
+ rename {trial-transport/app => app}/api/auth/[...nextauth]/route.ts (100%)
+ rename {trial-transport/app => app}/api/credits/allocate/route.ts (100%)
+ rename {trial-transport/app => app}/api/credits/balance/route.ts (100%)
+ rename {trial-transport/app => app}/api/credits/use/route.ts (100%)
+ rename {trial-transport/app => app}/api/driver/earnings-report/route.ts (100%)
+ rename {trial-transport/app => app}/api/health/route.ts (100%)
+ rename {trial-transport/app => app}/api/messages/[id]/read/route.ts (100%)
+ rename {trial-transport/app => app}/api/messages/route.ts (100%)
+ rename {trial-transport/app => app}/api/notifications/route.ts (100%)
+ rename {trial-transport/app => app}/api/pusher/auth/route.ts (100%)
+ rename {trial-transport/app => app}/api/shipments/[id]/route.ts (100%)
+ rename {trial-transport/app => app}/api/shipments/route.ts (100%)
+ rename {trial-transport/app => app}/api/stripe/cancel-subscription/route.ts (100%)
+ rename {trial-transport/app => app}/api/stripe/create-payment-intent/route.ts (100%)
+ rename {trial-transport/app => app}/api/stripe/create-subscription/route.ts (100%)
+ rename {trial-transport/app => app}/api/stripe/payment-methods/route.ts (100%)
+ rename {trial-transport/app => app}/api/stripe/webhook/route.ts (100%)
+ rename {trial-transport/app => app}/api/tracking/[trackingNumber]/route.ts (100%)
+ rename {trial-transport/app => app}/api/upload/route.ts (100%)
+ rename {trial-transport/app => app}/api/users/profile/route.ts (100%)
+ rename {trial-transport/app => app}/api/users/register/route.ts (100%)
+ rename {trial-transport/app => app}/driver/availability/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/available/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/dashboard/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/earnings/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/messages/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/profile-enhanced/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/profile/page.tsx (100%)
+ rename {trial-transport/app => app}/driver/training/page.tsx (100%)
+ rename {trial-transport/app => app}/exit-strategy/page.tsx (100%)
+ rename {trial-transport/app => app}/globals-futuristic.css (100%)
+ rename {trial-transport/app => app}/globals.css (100%)
+ rename {trial-transport/app => app}/investors/documents/[slug]/page.tsx (100%)
+ rename {trial-transport/app => app}/investors/page.tsx (100%)
+ rename {trial-transport/app => app}/layout.tsx (100%)
+ rename {trial-transport/app => app}/login/page.tsx (100%)
+ rename {trial-transport/app => app}/page-backup-realistic.tsx (100%)
+ rename {trial-transport/app => app}/page-realistic-financial-section.tsx (100%)
+ rename {trial-transport/app => app}/page.tsx (100%)
+ rename {trial-transport/app => app}/page.tsx.backup (100%)
+ rename {trial-transport/app => app}/pricing/page-old.tsx (100%)
+ rename {trial-transport/app => app}/pricing/page.tsx (100%)
+ rename {trial-transport/app => app}/register/page.tsx (100%)
+ rename {trial-transport/app => app}/roadmap/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/billing/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/billing/payment-methods/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/bulk-create/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/calculator/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/create-shipment/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/dashboard/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/messages/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/profile/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/shipments/[id]/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/shipments/page.tsx (100%)
+ rename {trial-transport/app => app}/shipper/templates/page.tsx (100%)
+ rename {trial-transport/app => app}/track/[id]/page.tsx (100%)
+ rename {trial-transport/app => app}/white-label/page.tsx (100%)
+ rename {trial-transport/components => components}/AuthContext.tsx (100%)
+ rename {trial-transport/components => components}/DashboardNavigation.tsx (100%)
+ rename {trial-transport/components => components}/DemoDataBadge.tsx (100%)
+ rename {trial-transport/components => components}/DocumentUpload.tsx (100%)
+ rename {trial-transport/components => components}/Footer.tsx (100%)
+ rename {trial-transport/components => components}/Logo.tsx (100%)
+ rename {trial-transport/components => components}/MultiPhotoUpload.tsx (100%)
+ rename {trial-transport/components => components}/Navigation.tsx (100%)
+ rename {trial-transport/components => components}/PhotoUpload.tsx (100%)
+ rename {trial-transport/components => components}/VideoUpload.tsx (100%)
+ rename {trial-transport/lib => lib}/advanced-ai-engine.ts (100%)
+ rename {trial-transport/lib => lib}/ai-engine.ts (100%)
+ rename {trial-transport/lib => lib}/api-helpers.ts (100%)
+ rename {trial-transport/lib => lib}/auth-config.ts (100%)
+ rename {trial-transport/lib => lib}/auth.ts (100%)
+ rename {trial-transport/lib => lib}/demo-data-extended.ts (100%)
+ rename {trial-transport/lib => lib}/demo-data.ts (100%)
+ rename {trial-transport/lib => lib}/email.ts (100%)
+ rename {trial-transport/lib => lib}/extended-types.ts (100%)
+ rename {trial-transport/lib => lib}/financial-projections.ts (100%)
+ rename {trial-transport/lib => lib}/hooks/useNotifications.ts (100%)
+ rename {trial-transport/lib => lib}/hooks/useRealTimeTracking.ts (100%)
+ rename {trial-transport/lib => lib}/prisma.ts (100%)
+ rename {trial-transport/lib => lib}/pusher.ts (100%)
+ rename {trial-transport/lib => lib}/realistic-financial-projections.ts (100%)
+ rename {trial-transport/lib => lib}/sms.ts (100%)
+ rename {trial-transport/lib => lib}/stripe-config.ts (100%)
+ rename {trial-transport/lib => lib}/training-modules.ts (100%)
+ rename {trial-transport/lib => lib}/types.ts (100%)
+ rename trial-transport/next.config.js => next.config.js (100%)
+ create mode 100644 outputs/workspace_output_1761232399_1129.txt
+ create mode 100644 outputs/workspace_output_1761232417_9087.txt
+ create mode 100644 outputs/workspace_output_1761232426_7914.txt
+ create mode 100644 outputs/workspace_output_1761232439_1871.txt
+ create mode 100644 outputs/workspace_output_1761232448_3704.txt
+ create mode 100644 outputs/workspace_output_1761232463_6643.txt
+ create mode 100644 outputs/workspace_output_1761232474_2548.txt
+ create mode 100644 outputs/workspace_output_1761232481_2779.txt
+ rename trial-transport/vercel.json => outputs/workspace_output_1761235339_797.txt (100%)
+ create mode 100644 outputs/workspace_output_1761235347_3013.txt
+ create mode 100644 outputs/workspace_output_1761235388_2705.txt
+ create mode 100644 outputs/workspace_output_1761235423_1131.txt
+ create mode 100644 outputs/workspace_output_1761235440_4574.txt
+ create mode 100644 outputs/workspace_output_1761235495_2556.txt
+ create mode 100644 outputs/workspace_output_1761235512_9673.txt
+ create mode 100644 outputs/workspace_output_1761235530_463.txt
+ create mode 100644 outputs/workspace_output_1761235643_5294.txt
+ create mode 100644 outputs/workspace_output_1761235652_8159.txt
+ create mode 100644 outputs/workspace_output_1761235660_4548.txt
+ create mode 100644 outputs/workspace_output_1761235672_2210.txt
+ create mode 100644 outputs/workspace_output_1761235682_2758.txt
+ create mode 100644 outputs/workspace_output_1761235699_2971.txt
+ create mode 100644 outputs/workspace_output_1761235800_4673.txt
+ create mode 100644 outputs/workspace_output_1761235836_4815.txt
+ create mode 100644 outputs/workspace_output_1761235847_7927.txt
+ create mode 100644 outputs/workspace_output_1761235857_1096.txt
+ create mode 100644 outputs/workspace_output_1761235866_6387.txt
+ create mode 100644 outputs/workspace_output_1761235883_5348.txt
+ create mode 100644 outputs/workspace_output_1761236013_9866.txt
+ create mode 100644 outputs/workspace_output_1761236021_6379.txt
+ create mode 100644 outputs/workspace_output_1761236029_5.txt
+ create mode 100644 outputs/workspace_output_1761236039_8070.txt
+ create mode 100644 outputs/workspace_output_1761236050_7226.txt
+ create mode 100644 outputs/workspace_output_1761236059_4952.txt
+ create mode 100644 outputs/workspace_output_1761236079_1218.txt
+ create mode 100644 outputs/workspace_output_1761236208_5052.txt
+ create mode 100644 outputs/workspace_output_1761236222_5669.txt
+ create mode 100644 outputs/workspace_output_1761236235_1585.txt
+ create mode 100644 outputs/workspace_output_1761236243_2293.txt
+ create mode 100644 outputs/workspace_output_1761236252_739.txt
+ create mode 100644 outputs/workspace_output_1761236270_5011.txt
+ create mode 100644 outputs/workspace_output_1761236398_9415.txt
+ create mode 100644 outputs/workspace_output_1761236408_6633.txt
+ create mode 100644 outputs/workspace_output_1761236417_5085.txt
+ create mode 100644 outputs/workspace_output_1761236422_678.txt
+ create mode 100644 outputs/workspace_output_1761236439_4657.txt
+ create mode 100644 outputs/workspace_output_1761236566_7967.txt
+ create mode 100644 outputs/workspace_output_1761236575_8768.txt
+ create mode 100644 outputs/workspace_output_1761236584_2086.txt
+ create mode 100644 outputs/workspace_output_1761236593_6175.txt
+ create mode 100644 outputs/workspace_output_1761236602_7796.txt
+ create mode 100644 outputs/workspace_output_1761236610_8458.txt
+ create mode 100644 outputs/workspace_output_1761236617_4929.txt
+ create mode 100644 outputs/workspace_output_1761236626_4209.txt
+ create mode 100644 outputs/workspace_output_1761236644_3253.txt
+ create mode 100644 outputs/workspace_output_1761236658_5253.txt
+ create mode 100644 outputs/workspace_output_1761236668_9408.txt
+ create mode 100644 outputs/workspace_output_1761236689_9361.txt
+ create mode 100644 outputs/workspace_output_1761236697_8836.txt
+ create mode 100644 outputs/workspace_output_1761236704_9040.txt
+ create mode 100644 outputs/workspace_output_1761236711_1344.txt
+ create mode 100644 outputs/workspace_output_1761236728_8071.txt
+ create mode 100644 outputs/workspace_output_1761236867_1195.txt
+ create mode 100644 outputs/workspace_output_1761236885_3281.txt
+ create mode 100644 outputs/workspace_output_1761237022_9639.txt
+ create mode 100644 outputs/workspace_output_1761237040_8759.txt
+ create mode 100644 outputs/workspace_output_1761237176_9913.txt
+ create mode 100644 outputs/workspace_output_1761237185_9229.txt
+ create mode 100644 outputs/workspace_output_1761237195_1316.txt
+ create mode 100644 outputs/workspace_output_1761238387_7219.txt
+ create mode 100644 outputs/workspace_output_1761238398_8938.txt
+ create mode 100644 outputs/workspace_output_1761238408_2349.txt
+ create mode 100644 outputs/workspace_output_1761238417_5825.txt
+ create mode 100644 outputs/workspace_output_1761238426_9489.txt
+ create mode 100644 outputs/workspace_output_1761238436_7629.txt
+ create mode 100644 outputs/workspace_output_1761238444_8284.txt
+ rename trial-transport/package-lock.json => package-lock.json (100%)
+ rename trial-transport/package.json => package.json (100%)
+ rename trial-transport/postcss.config.js => postcss.config.js (100%)
+ rename {trial-transport/prisma => prisma}/schema.prisma (100%)
+ rename {trial-transport/prisma => prisma}/seed.ts (100%)
+ rename {trial-transport/public => public}/crpro-logo.png (100%)
+ rename trial-transport/tailwind.config.ts => tailwind.config.ts (100%)
+ rename {trial-transport/tests => tests}/api-tests.http (100%)
+ rename {trial-transport/tests => tests}/test-api.js (100%)
+ delete mode 100644 trial-transport/.gitignore
+ rename trial-transport/tsconfig.json => tsconfig.json (100%)
+ rename {trial-transport/types => types}/next-auth.d.ts (100%)
+ create mode 100644 vercel.json

@@ -84,9 +84,9 @@ export async function POST(request: NextRequest) {
 
     // Allocate credits if plan includes them
     if (planDetails.includedCredits > 0) {
-      // Calculate expiration date (90 days)
+      // Calculate expiration date (end of billing month)
       const expiresAt = new Date()
-      expiresAt.setDate(expiresAt.getDate() + 90)
+      expiresAt.setMonth(expiresAt.getMonth() + 1); expiresAt.setDate(0); expiresAt.setHours(23, 59, 59, 999)
 
       // Create credit transaction
       await prisma.creditTransaction.create({

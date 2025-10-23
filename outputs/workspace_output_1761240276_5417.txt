@@ -1,0 +1,11 @@
+    // Allocate credits if plan includes them
+    if (planDetails.includedCredits > 0) {
+      // Calculate expiration date (90 days)
+      const expiresAt = new Date()
+      expiresAt.setDate(expiresAt.getDate() + 90)
+
+      // Create credit transaction
+      await prisma.creditTransaction.create({
+        data: {
+          shipperId: user.shipperProfile.id,
+          type: 'ALLOCATION',
