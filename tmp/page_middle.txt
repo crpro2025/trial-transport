@@ -1,0 +1,20 @@
+<div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                 <button
+                   onClick={() => router.push('/register')}
+                   className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:-translate-y-1"
+                 >
+                   Start Free Trial
+                 </button>
+                 <button
+                   onClick={() => router.push('/investors')}
+                   className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/50 transition-all transform hover:-translate-y-1"
+                 >
+                   💼 Investor Materials
+                 </button>
+                 <button
+                   onClick={() => router.push('/pricing')}
+                   className="px-8 py-4 border-2 border-white/20 rounded-xl text-lg font-semibold hover:bg-white/5 transition-all"
+                 >
+                   View Pricing
+                 </button>
+               </div>

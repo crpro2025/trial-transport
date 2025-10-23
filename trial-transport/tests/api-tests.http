@@ -1,0 +1,194 @@
+### Trial Transport API Tests
+### Use REST Client extension in VS Code or similar tool
+
+@baseUrl = http://localhost:3000
+@token = YOUR_SESSION_TOKEN_HERE
+
+### 1. User Registration
+POST {{baseUrl}}/api/users/register
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123",
+  "name": "Test User",
+  "role": "SHIPPER",
+  "companyName": "Test Company",
+  "companyType": "Pharmaceutical"
+}
+
+### 2. Login (via NextAuth)
+POST {{baseUrl}}/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "shipper@trial.com",
+  "password": "password123"
+}
+
+### 3. Get User Profile
+GET {{baseUrl}}/api/users/profile
+Cookie: next-auth.session-token={{token}}
+
+### 4. Update User Profile
+PUT {{baseUrl}}/api/users/profile
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "name": "Updated Name",
+  "phone": "(555) 123-4567"
+}
+
+### 5. Create Shipment
+POST {{baseUrl}}/api/shipments
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "specimenType": "Blood Samples",
+  "quantity": 24,
+  "temperatureReq": "2-8°C",
+  "priority": "STANDARD",
+  "pickupName": "Test Lab",
+  "pickupPhone": "(555) 111-2222",
+  "pickupEmail": "lab@test.com",
+  "pickupAddress": "123 Main St",
+  "pickupCity": "Nashville",
+  "pickupState": "TN",
+  "pickupZip": "37203",
+  "pickupDate": "2025-10-25T09:00:00Z",
+  "pickupTimeStart": "09:00",
+  "pickupTimeEnd": "11:00",
+  "deliveryName": "Research Center",
+  "deliveryPhone": "(555) 333-4444",
+  "deliveryEmail": "research@test.com",
+  "deliveryAddress": "456 Oak Ave",
+  "deliveryCity": "Atlanta",
+  "deliveryState": "GA",
+  "deliveryZip": "30322",
+  "deliveryDate": "2025-10-25T14:00:00Z",
+  "deliveryTimeStart": "14:00",
+  "deliveryTimeEnd": "16:00",
+  "specialInstructions": "Handle with care"
+}
+
+### 6. Get All Shipments
+GET {{baseUrl}}/api/shipments?limit=20&offset=0
+Cookie: next-auth.session-token={{token}}
+
+### 7. Get Shipment by ID
+GET {{baseUrl}}/api/shipments/SHIPMENT_ID_HERE
+Cookie: next-auth.session-token={{token}}
+
+### 8. Update Shipment Status
+PATCH {{baseUrl}}/api/shipments/SHIPMENT_ID_HERE
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "status": "ASSIGNED",
+  "driverId": "DRIVER_ID_HERE"
+}
+
+### 9. Get Tracking Info (Public)
+GET {{baseUrl}}/api/tracking/TT-2025-001
+
+### 10. Update Tracking Location
+POST {{baseUrl}}/api/tracking/TT-2025-001
+Content-Type: application/json
+
+{
+  "latitude": 33.7490,
+  "longitude": -84.3880,
+  "temperature": 4.2,
+  "humidity": 45
+}
+
+### 11. Send Message
+POST {{baseUrl}}/api/messages
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "receiverId": "RECEIVER_USER_ID",
+  "content": "Hello, this is a test message",
+  "shipmentId": "SHIPMENT_ID_HERE"
+}
+
+### 12. Get Messages
+GET {{baseUrl}}/api/messages?with=USER_ID_HERE
+Cookie: next-auth.session-token={{token}}
+
+### 13. Mark Message as Read
+PATCH {{baseUrl}}/api/messages/MESSAGE_ID_HERE/read
+Cookie: next-auth.session-token={{token}}
+
+### 14. Get Notifications
+GET {{baseUrl}}/api/notifications?unreadOnly=true
+Cookie: next-auth.session-token={{token}}
+
+### 15. Mark Notifications as Read
+PATCH {{baseUrl}}/api/notifications
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "markAllAsRead": true
+}
+
+### 16. Upload File
+POST {{baseUrl}}/api/upload
+Content-Type: multipart/form-data
+Cookie: next-auth.session-token={{token}}
+
+# Add file in form data with key "file"
+# Add "folder" and "type" fields
+
+### 17. Create Payment Intent
+POST {{baseUrl}}/api/stripe/create-payment-intent
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "amount": 130.00,
+  "metadata": {
+    "shipmentId": "SHIPMENT_ID_HERE"
+  }
+}
+
+### 18. Create Subscription
+POST {{baseUrl}}/api/stripe/create-subscription
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "plan": "PROFESSIONAL",
+  "billing": "monthly"
+}
+
+### 19. Get Payment Methods
+GET {{baseUrl}}/api/stripe/payment-methods
+Cookie: next-auth.session-token={{token}}
+
+### 20. Add Payment Method
+POST {{baseUrl}}/api/stripe/payment-methods
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "paymentMethodId": "pm_test_123456",
+  "setAsDefault": true
+}
+
+### 21. Cancel Subscription
+POST {{baseUrl}}/api/stripe/cancel-subscription
+Content-Type: application/json
+Cookie: next-auth.session-token={{token}}
+
+{
+  "subscriptionId": "sub_123456"
+}
+
+### 22. Health Check
+GET {{baseUrl}}/api/health

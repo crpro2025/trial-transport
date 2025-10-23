@@ -1,0 +1,714 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// AUTHENTICATION & USER MANAGEMENT
+// ============================================
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  name          String
+  role          UserRole
+  emailVerified DateTime?
+  image         String?
+  phone         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts      Account[]
+  sessions      Session[]
+  shipperProfile   ShipperProfile?
+  driverProfile    DriverProfile?
+  adminProfile     AdminProfile?
+  sentMessages     Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+  notifications    Notification[]
+  activities       ActivityLog[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum UserRole {
+  ADMIN
+  SHIPPER
+  DRIVER
+}
+
+// ============================================
+// SHIPPER PROFILE
+// ============================================
+
+model ShipperProfile {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  companyName       String
+  companyType       String?
+  address           String?
+  city              String?
+  state             String?
+  zipCode           String?
+  country           String   @default("USA")
+  billingEmail      String?
+  billingPhone      String?
+  taxId             String?
+  subscriptionPlan  SubscriptionPlan @default(BASIC)
+  subscriptionStatus SubscriptionStatus @default(ACTIVE)
+  shipmentsUsed     Int      @default(0)
+  shipmentsIncluded Int      @default(0)
+  
+  // Hybrid Model: Credits System
+  creditsBalance    Float    @default(0)
+  creditsAllocated  Float    @default(0)
+  creditsUsed       Float    @default(0)
+  discountRate      Float    @default(0) // 0.15 = 15% discount
+  
+  nextBillingDate   DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shipments         Shipment[]
+  templates         ShipmentTemplate[]
+  paymentMethods    PaymentMethod[]
+  invoices          Invoice[]
+  creditTransactions CreditTransaction[]
+
+  @@index([userId])
+  @@index([subscriptionPlan])
+}
+
+enum SubscriptionPlan {
+  BASIC
+  STARTER
+  PROFESSIONAL
+  ENTERPRISE
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  PAST_DUE
+  SUSPENDED
+}
+
+// ============================================
+// DRIVER PROFILE
+// ============================================
+
+model DriverProfile {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  licenseNumber     String?
+  licenseState      String?
+  licenseExpiry     DateTime?
+  vehicleMake       String?
+  vehicleModel      String?
+  vehicleYear       Int?
+  vehiclePlate      String?
+  vehicleColor      String?
+  vehiclePhotos     String[] // Array of S3 URLs
+  vehicleVideoUrl   String?
+  insuranceProvider String?
+  insurancePolicy   String?
+  insuranceExpiry   DateTime?
+  
+  // Equipment
+  hasRefrigerator   Boolean  @default(false)
+  hasFreezer        Boolean  @default(false)
+  hasCryogenic      Boolean  @default(false)
+  hasTempMonitors   Int      @default(0)
+  hasInsulatedBags  Int      @default(0)
+  hasCoolers        Int      @default(0)
+  
+  // Certifications
+  hipaaCompleted    Boolean  @default(false)
+  hipaaCompletedAt  DateTime?
+  specimenCompleted Boolean  @default(false)
+  specimenCompletedAt DateTime?
+  tempControlCompleted Boolean @default(false)
+  tempControlCompletedAt DateTime?
+  safetyCompleted   Boolean  @default(false)
+  safetyCompletedAt DateTime?
+  
+  // Availability
+  isAvailable       Boolean  @default(false)
+  serviceRadius     Int      @default(25) // miles
+  homeLatitude      Float?
+  homeLongitude     Float?
+  homeAddress       String?
+  
+  // Schedule (JSON stored as string)
+  weeklySchedule    Json?
+  
+  // Preferences
+  acceptsStandard   Boolean  @default(true)
+  acceptsRefrigerated Boolean @default(true)
+  acceptsFrozen     Boolean  @default(true)
+  acceptsCryogenic  Boolean  @default(false)
+  minDeliveryFee    Float    @default(45.0)
+  maxDeliveriesPerDay Int    @default(10)
+  autoAccept        Boolean  @default(false)
+  
+  // Performance
+  totalDeliveries   Int      @default(0)
+  completedDeliveries Int    @default(0)
+  cancelledDeliveries Int    @default(0)
+  onTimeRate        Float    @default(0.0)
+  tempComplianceRate Float   @default(0.0)
+  rating            Float    @default(5.0)
+  totalEarnings     Float    @default(0.0)
+  availableBalance  Float    @default(0.0)
+  pendingBalance    Float    @default(0.0)
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shipments         Shipment[]
+  earnings          Earning[]
+  payouts           Payout[]
+  documents         DriverDocument[]
+
+  @@index([userId])
+  @@index([isAvailable])
+  @@index([homeLatitude, homeLongitude])
+}
+
+model DriverDocument {
+  id          String   @id @default(cuid())
+  driverId    String
+  type        DocumentType
+  fileName    String
+  fileUrl     String
+  fileSize    Int
+  uploadedAt  DateTime @default(now())
+  expiresAt   DateTime?
+  verified    Boolean  @default(false)
+  verifiedAt  DateTime?
+  verifiedBy  String?
+
+  driver      DriverProfile @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  @@index([driverId])
+  @@index([type])
+}
+
+enum DocumentType {
+  DRIVERS_LICENSE
+  INSURANCE
+  VEHICLE_REGISTRATION
+  HIPAA_CERTIFICATE
+  MEDICAL_COURIER_CERT
+  BACKGROUND_CHECK
+  OTHER
+}
+
+// ============================================
+// ADMIN PROFILE
+// ============================================
+
+model AdminProfile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  department  String?
+  permissions Json?    // Array of permission strings
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// ============================================
+// SHIPMENTS
+// ============================================
+
+model Shipment {
+  id                String   @id @default(cuid())
+  shipperId         String
+  driverId          String?
+  
+  // Shipment Details
+  trackingNumber    String   @unique
+  status            ShipmentStatus @default(PENDING)
+  priority          Priority @default(STANDARD)
+  specimenType      String
+  quantity          Int
+  temperatureReq    String
+  
+  // Pickup
+  pickupName        String
+  pickupPhone       String
+  pickupEmail       String?
+  pickupAddress     String
+  pickupCity        String
+  pickupState       String
+  pickupZip         String
+  pickupLatitude    Float?
+  pickupLongitude   Float?
+  pickupDate        DateTime
+  pickupTimeStart   String
+  pickupTimeEnd     String
+  pickupInstructions String?
+  
+  // Delivery
+  deliveryName      String
+  deliveryPhone     String
+  deliveryEmail     String?
+  deliveryAddress   String
+  deliveryCity      String
+  deliveryState     String
+  deliveryZip       String
+  deliveryLatitude  Float?
+  deliveryLongitude Float?
+  deliveryDate      DateTime
+  deliveryTimeStart String
+  deliveryTimeEnd   String
+  deliveryInstructions String?
+  
+  // Pricing
+  basePrice         Float
+  distanceFee       Float    @default(0)
+  priorityFee       Float    @default(0)
+  totalPrice        Float
+  driverEarnings    Float?
+  
+  // Tracking
+  currentLatitude   Float?
+  currentLongitude  Float?
+  currentTemp       Float?
+  estimatedArrival  DateTime?
+  actualPickupTime  DateTime?
+  actualDeliveryTime DateTime?
+  
+  // AI Scores
+  aiMatchScore      Float?
+  riskScore         Float?
+  qualityScore      Float?
+  
+  // Photos & Documents
+  pickupPhotos      String[] // Array of S3 URLs
+  deliveryPhotos    String[] // Array of S3 URLs
+  signatureUrl      String?
+  
+  // Notes
+  specialInstructions String?
+  internalNotes     String?
+  cancellationReason String?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  shipper           ShipperProfile @relation(fields: [shipperId], references: [id])
+  driver            DriverProfile? @relation(fields: [driverId], references: [id])
+  timeline          ShipmentTimeline[]
+  temperatureReadings TemperatureReading[]
+
+  @@index([shipperId])
+  @@index([driverId])
+  @@index([status])
+  @@index([trackingNumber])
+  @@index([pickupDate])
+}
+
+model ShipmentTimeline {
+  id          String   @id @default(cuid())
+  shipmentId  String
+  status      String
+  description String
+  latitude    Float?
+  longitude   Float?
+  timestamp   DateTime @default(now())
+
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  @@index([shipmentId])
+  @@index([timestamp])
+}
+
+model TemperatureReading {
+  id          String   @id @default(cuid())
+  shipmentId  String
+  temperature Float
+  humidity    Float?
+  latitude    Float?
+  longitude   Float?
+  timestamp   DateTime @default(now())
+
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  @@index([shipmentId])
+  @@index([timestamp])
+}
+
+enum ShipmentStatus {
+  PENDING
+  ASSIGNED
+  ACCEPTED
+  PICKED_UP
+  IN_TRANSIT
+  DELIVERED
+  CANCELLED
+  FAILED
+}
+
+enum Priority {
+  STANDARD
+  URGENT
+  CRITICAL
+}
+
+// ============================================
+// SHIPMENT TEMPLATES
+// ============================================
+
+model ShipmentTemplate {
+  id                String   @id @default(cuid())
+  shipperId         String
+  name              String
+  description       String?
+  
+  // Template Data (same fields as Shipment)
+  specimenType      String
+  quantity          Int
+  temperatureReq    String
+  priority          Priority @default(STANDARD)
+  
+  pickupName        String
+  pickupPhone       String
+  pickupEmail       String?
+  pickupAddress     String
+  pickupCity        String
+  pickupState       String
+  pickupZip         String
+  pickupInstructions String?
+  
+  deliveryName      String
+  deliveryPhone     String
+  deliveryEmail     String?
+  deliveryAddress   String
+  deliveryCity      String
+  deliveryState     String
+  deliveryZip       String
+  deliveryInstructions String?
+  
+  specialInstructions String?
+  
+  timesUsed         Int      @default(0)
+  lastUsed          DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  shipper           ShipperProfile @relation(fields: [shipperId], references: [id], onDelete: Cascade)
+
+  @@index([shipperId])
+}
+
+// ============================================
+// MESSAGING
+// ============================================
+
+model Message {
+  id          String   @id @default(cuid())
+  senderId    String
+  receiverId  String
+  shipmentId  String?
+  content     String   @db.Text
+  read        Boolean  @default(false)
+  readAt      DateTime?
+  createdAt   DateTime @default(now())
+
+  sender      User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver    User     @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@index([senderId])
+  @@index([receiverId])
+  @@index([shipmentId])
+  @@index([createdAt])
+}
+
+// ============================================
+// NOTIFICATIONS
+// ============================================
+
+model Notification {
+  id          String   @id @default(cuid())
+  userId      String
+  type        NotificationType
+  title       String
+  message     String   @db.Text
+  link        String?
+  read        Boolean  @default(false)
+  readAt      DateTime?
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([read])
+  @@index([createdAt])
+}
+
+enum NotificationType {
+  SHIPMENT_CREATED
+  SHIPMENT_ASSIGNED
+  SHIPMENT_ACCEPTED
+  SHIPMENT_PICKED_UP
+  SHIPMENT_DELIVERED
+  SHIPMENT_CANCELLED
+  MESSAGE_RECEIVED
+  PAYMENT_RECEIVED
+  PAYOUT_PROCESSED
+  DOCUMENT_EXPIRING
+  SYSTEM_ALERT
+}
+
+// ============================================
+// PAYMENTS & BILLING
+// ============================================
+
+model PaymentMethod {
+  id          String   @id @default(cuid())
+  shipperId   String
+  type        PaymentType
+  last4       String
+  brand       String?
+  expiryMonth Int?
+  expiryYear  Int?
+  isDefault   Boolean  @default(false)
+  stripePaymentMethodId String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  shipper     ShipperProfile @relation(fields: [shipperId], references: [id], onDelete: Cascade)
+
+  @@index([shipperId])
+}
+
+enum PaymentType {
+  CREDIT_CARD
+  DEBIT_CARD
+  BANK_ACCOUNT
+}
+
+model Invoice {
+  id          String   @id @default(cuid())
+  shipperId   String
+  invoiceNumber String @unique
+  amount      Float
+  status      InvoiceStatus @default(PENDING)
+  dueDate     DateTime
+  paidAt      DateTime?
+  stripeInvoiceId String?
+  pdfUrl      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  shipper     ShipperProfile @relation(fields: [shipperId], references: [id], onDelete: Cascade)
+  items       InvoiceItem[]
+
+  @@index([shipperId])
+  @@index([status])
+  @@index([invoiceNumber])
+}
+
+model InvoiceItem {
+  id          String   @id @default(cuid())
+  invoiceId   String
+  description String
+  quantity    Int
+  unitPrice   Float
+  amount      Float
+
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  @@index([invoiceId])
+}
+
+enum InvoiceStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+// ============================================
+// DRIVER EARNINGS & PAYOUTS
+// ============================================
+
+model Earning {
+  id          String   @id @default(cuid())
+  driverId    String
+  shipmentId  String?
+  amount      Float
+  type        EarningType
+  status      EarningStatus @default(PENDING)
+  paidOut     Boolean  @default(false)
+  payoutId    String?
+  createdAt   DateTime @default(now())
+
+  driver      DriverProfile @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  @@index([driverId])
+  @@index([status])
+  @@index([paidOut])
+}
+
+enum EarningType {
+  DELIVERY
+  BONUS
+  TIP
+  ADJUSTMENT
+}
+
+enum EarningStatus {
+  PENDING
+  AVAILABLE
+  PROCESSING
+  PAID
+}
+
+model Payout {
+  id          String   @id @default(cuid())
+  driverId    String
+  amount      Float
+  method      PayoutMethod
+  status      PayoutStatus @default(PENDING)
+  stripePayoutId String?
+  processedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  driver      DriverProfile @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  @@index([driverId])
+  @@index([status])
+}
+
+enum PayoutMethod {
+  BANK_TRANSFER
+  DEBIT_CARD
+}
+
+enum PayoutStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+// ============================================
+// ACTIVITY LOGS
+// ============================================
+
+model ActivityLog {
+  id          String   @id @default(cuid())
+  userId      String
+  action      String
+  entity      String?
+  entityId    String?
+  metadata    Json?
+  ipAddress   String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+}
+
+// ============================================
+// SYSTEM SETTINGS
+// ============================================
+
+model SystemSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   @db.Text
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@index([key])
+}
+
+// ============================================
+// CREDIT TRANSACTIONS
+// ============================================
+
+model CreditTransaction {
+  id          String   @id @default(cuid())
+  shipperId   String
+  type        CreditTransactionType
+  amount      Float
+  balance     Float
+  description String?
+  shipmentId  String?
+  expiresAt   DateTime?
+  createdAt   DateTime @default(now())
+
+  shipper     ShipperProfile @relation(fields: [shipperId], references: [id], onDelete: Cascade)
+
+  @@index([shipperId])
+  @@index([createdAt])
+}
+
+enum CreditTransactionType {
+  ALLOCATION
+  USAGE
+  EXPIRATION
+  REFUND
+  ADJUSTMENT
+}

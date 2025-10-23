@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial Transport℠ - Investor Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 40px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            page-break-after: always;
+            position: relative;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #3b82f6;
+        }
+
+        .slide h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #8b5cf6;
+        }
+
+        .slide p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .slide li {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #3b82f6;
+            margin: 20px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 42px;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .table th {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 15px;
+            text-align: left;
+            font-size: 18px;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        .table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 18px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-box h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            background: rgba(59, 130, 246, 0.8);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: rgba(59, 130, 246, 1);
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            .navigation {
+                display: none;
+            }
+            .slide {
+                margin-bottom: 0;
+                page-break-after: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+                min-height: auto;
+            }
+            .slide h1 {
+                font-size: 32px;
+            }
+            .slide h2 {
+                font-size: 24px;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- SLIDE 1: TITLE SLIDE -->
+        <div class="slide" id="slide-1">
+            <div class="slide-number">1/20</div>
+            <div style="text-align: center; padding: 60px 0;">
+                <div class="logo" style="font-size: 64px;">Trial Transport℠</div>
+                <div class="subtitle" style="font-size: 28px; margin-bottom: 60px;">
+                    AI-Powered Clinical Trial Logistics Platform
+                </div>
+                <h2 style="color: #ffffff; margin-bottom: 40px;">Investor Pitch Deck</h2>
+                <p style="font-size: 24px; color: rgba(255, 255, 255, 0.8);">
+                    Revolutionizing Clinical Research Logistics with Advanced AI
+                </p>
+                <div style="margin-top: 60px; font-size: 18px; color: rgba(255, 255, 255, 0.6);">
+                    <p>Clinical Research Pro Corporation</p>
+                    <p>Seeking $4M Seed Round at $12M Pre-Money Valuation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: THE PROBLEM -->
+        <div class="slide" id="slide-2">
+            <div class="slide-number">2/20</div>
+            <h2>The Problem: Clinical Trial Logistics is Broken</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">$2.6B</div>
+                    <div class="stat-label">Annual losses from specimen failures</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-label">Of trials delayed by logistics</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">15%</div>
+                    <div class="stat-label">Specimen failure rate</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Critical Pain Points:</h3>
+            <ul>
+                <li><strong>Temperature Excursions:</strong> 15% of specimens fail due to improper temperature control</li>
+                <li><strong>Lack of Real-Time Visibility:</strong> No GPS tracking or live monitoring</li>
+                <li><strong>Manual Processes:</strong> Paper-based chain of custody, prone to errors</li>
+                <li><strong>High Costs:</strong> Traditional couriers charge 40-50% more than necessary</li>
+                <li><strong>Compliance Risks:</strong> Difficult to prove ICH E6 (R3) and HIPAA compliance</li>
+                <li><strong>Limited Driver Network:</strong> Specialized couriers have limited availability</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 3: THE SOLUTION -->
+        <div class="slide" id="slide-3">
+            <div class="slide-number">3/20</div>
+            <h2>The Solution: AI-Powered Logistics Platform</h2>
+            
+            <div class="highlight">
+                <h3>Trial Transport℠ is the first comprehensive AI-powered platform for clinical trial logistics</h3>
+            </div>
+
+            <div class="two-column">
+                <div>
+                    <h3>Core Technology:</h3>
+                    <ul>
+                        <li><strong>6 Specialized AI Models</strong> analyzing 820+ features</li>
+                        <li><strong>Real-Time GPS Tracking</strong> with live temperature monitoring</li>
+                        <li><strong>Blockchain Chain of Custody</strong> for immutable records</li>
+                        <li><strong>IoT Sensor Network</strong> (2,847 active sensors)</li>
+                        <li><strong>Predictive Analytics</strong> (91% accuracy)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Key Benefits:</h3>
+                    <ul>
+                        <li><strong>99.2% Temperature Compliance</strong> (vs 94-98% industry)</li>
+                        <li><strong>30-50% Cost Savings</strong> vs traditional couriers</li>
+                        <li><strong>96.8% On-Time Delivery</strong> rate</li>
+                        <li><strong>100% ICH E6 (R3) Compliant</strong></li>
+                        <li><strong>Real-Time Visibility</strong> for all stakeholders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: MARKET OPPORTUNITY -->
+        <div class="slide" id="slide-4">
+            <div class="slide-number">4/20</div>
+            <h2>Massive Market Opportunity</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">$8.2B</div>
+                    <div class="stat-label">Current Market Size (2024)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$15.7B</div>
+                    <div class="stat-label">Projected Market (2030)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">11.4%</div>
+                    <div class="stat-label">Annual Growth Rate (CAGR)</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Market Drivers:</h3>
+            <ul>
+                <li><strong>450,000+ Active Clinical Trials</strong> globally requiring specialized logistics</li>
+                <li><strong>70% of New Drugs</strong> require cold chain logistics</li>
+                <li><strong>Increasing Complexity:</strong> Cell & gene therapies, personalized medicine</li>
+                <li><strong>Regulatory Pressure:</strong> ICH E6 (R3) mandates stricter compliance</li>
+                <li><strong>Decentralized Trials:</strong> Growing need for home-based specimen collection</li>
+                <li><strong>Digital Transformation:</strong> Shift from paper to digital processes</li>
+            </ul>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>TAM:</strong> $8.2B | <strong>SAM:</strong> $2.5B (US Market) | <strong>SOM:</strong> $250M (3% capture in 5 years)</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: BUSINESS MODEL -->
+        <div class="slide" id="slide-5">
+            <div class="slide-number">5/20</div>
+            <h2>Business Model: 4 Revenue Streams</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">40%</div>
+                    <div class="stat-label">Subscription Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">45%</div>
+                    <div class="stat-label">Per-Delivery Fees</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10%</div>
+                    <div class="stat-label">API Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5%</div>
+                    <div class="stat-label">White-Label</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Pricing Structure:</h3>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Monthly</th>
+                        <th>Annual</th>
+                        <th>Shipments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Starter</strong></td>
+                        <td>$299</td>
+                        <td>$2,990</td>
+                        <td>50/month</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Professional</strong></td>
+                        <td>$699</td>
+                        <td>$6,990</td>
+                        <td>200/month</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enterprise</strong></td>
+                        <td>$1,499</td>
+                        <td>$14,990</td>
+                        <td>Unlimited</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 20px;"><strong>Per-Delivery Fees:</strong> $45-$175 depending on type (Standard, Refrigerated, Frozen, Cryogenic, Critical)</p>
+        </div>
+
+        <!-- SLIDE 6: COMPETITIVE ADVANTAGE -->
+        <div class="slide" id="slide-6">
+            <div class="slide-number">6/20</div>
+            <h2>Competitive Advantage: Why We Win</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Trial Transport℠</th>
+                        <th>Competitors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AI-Powered Matching</strong></td>
+                        <td>✅ 6 models, 94% accuracy</td>
+                        <td>❌ Manual dispatch</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Real-Time GPS Tracking</strong></td>
+                        <td>✅ Live updates every 30s</td>
+                        <td>⚠️ Limited or none</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temperature Compliance</strong></td>
+                        <td>✅ 99.2%</td>
+                        <td>⚠️ 94-98%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Blockchain Chain of Custody</strong></td>
+                        <td>✅ Immutable records</td>
+                        <td>❌ Paper-based</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pricing</strong></td>
+                        <td>✅ 30-50% cheaper</td>
+                        <td>❌ Premium pricing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Integration</strong></td>
+                        <td>✅ 71+ endpoints</td>
+                        <td>⚠️ Limited APIs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ICH E6 (R3) Compliance</strong></td>
+                        <td>✅ Built-in</td>
+                        <td>⚠️ Manual compliance</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Key Differentiator:</strong> We're the ONLY comprehensive AI solution in clinical trial logistics. Competitors are traditional couriers with limited technology.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: TRACTION & VALIDATION -->
+        <div class="slide" id="slide-7">
+            <div class="slide-number">7/20</div>
+            <h2>Traction & Validation: 9 Pilot Partners Ready</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">9</div>
+                    <div class="stat-label">Pilot Partners Committed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">165+</div>
+                    <div class="stat-label">Active Clinical Trials</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$2.8M</div>
+                    <div class="stat-label">Projected Year 1 Revenue</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Pilot Partners:</h3>
+            <ul>
+                <li><strong>Vanderbilt University Medical Center</strong> - 45 active trials, oncology focus</li>
+                <li><strong>Emory University</strong> - 38 active trials, infectious disease research</li>
+                <li><strong>University of Louisville</strong> - 22 active trials, cardiovascular studies</li>
+                <li><strong>Mid-Size Pharma Company</strong> - 15 trials, Phase II/III oncology</li>
+                <li><strong>Large Pharma Company</strong> - 28 trials, multiple therapeutic areas</li>
+                <li><strong>Regional CRO</strong> - 8 trials, early-phase studies</li>
+                <li><strong>National CRO</strong> - 12 trials, late-phase studies</li>
+                <li><strong>Biotech Startup</strong> - 3 trials, cell & gene therapy</li>
+                <li><strong>PBMC Lab Network</strong> - 6 labs, 450+ monthly shipments</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 8: GO-TO-MARKET STRATEGY -->
+        <div class="slide" id="slide-8">
+            <div class="slide-number">8/20</div>
+            <h2>Go-To-Market Strategy: 5 Phases</h2>
+            
+            <div style="margin-top: 30px;">
+                <div class="highlight">
+                    <h3>Phase 1: Pilot Program (Q4 2025 - Q2 2026)</h3>
+                    <ul>
+                        <li>Launch with 9 committed partners</li>
+                        <li>Complete 500 deliveries with 99%+ compliance</li>
+                        <li>Gather testimonials and case studies</li>
+                        <li>Refine product based on feedback</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <h3>Phase 2: Beta Launch (Q3-Q4 2026)</h3>
+                    <ul>
+                        <li>Expand to 15 customers (5 AMCs, 5 pharma, 5 CROs)</li>
+                        <li>Launch in 3 major metro areas (Nashville, Atlanta, Boston)</li>
+                        <li>Recruit and train 100 drivers</li>
+                        <li>Target: $150K monthly revenue</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <h3>Phase 3: Market Launch (2027)</h3>
+                    <ul>
+                        <li>Scale to 200 customers across 10 cities</li>
+                        <li>Expand driver network to 500+</li>
+                        <li>Launch API marketplace and white-label solution</li>
+                        <li>Target: $6.3M annual revenue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: MARKETING PLAN -->
+        <div class="slide" id="slide-9">
+            <div class="slide-number">9/20</div>
+            <h2>Marketing Plan: $1.2M Year 1 Budget</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">25%</div>
+                    <div class="stat-label">Content Marketing ($300K)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-label">Digital Ads ($360K)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">20%</div>
+                    <div class="stat-label">Events ($240K)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">25%</div>
+                    <div class="stat-label">PR & Partnerships ($300K)</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Key Marketing Channels:</h3>
+            <ul>
+                <li><strong>Content Marketing:</strong> Thought leadership, case studies, whitepapers, SEO</li>
+                <li><strong>Digital Advertising:</strong> LinkedIn, Google Ads, retargeting campaigns</li>
+                <li><strong>Events & Conferences:</strong> DIA, SCOPE, ACRP, booth presence + speaking</li>
+                <li><strong>PR & Communications:</strong> Press releases, media outreach, industry publications</li>
+                <li><strong>Strategic Partnerships:</strong> CRO partnerships, pharma alliances, lab networks</li>
+            </ul>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Target:</strong> 50 customers by end of Year 1 | <strong>CAC:</strong> $24K | <strong>LTV:</strong> $170K | <strong>LTV/CAC:</strong> 7.1x</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: FINANCIAL PROJECTIONS -->
+        <div class="slide" id="slide-10">
+            <div class="slide-number">10/20</div>
+            <h2>Financial Projections: Path to $800M Revenue</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Year 1 (2027)</th>
+                        <th>Year 2 (2028)</th>
+                        <th>Year 3 (2029)</th>
+                        <th>Year 5 (2031)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Revenue</strong></td>
+                        <td>$6.3M</td>
+                        <td>$28M</td>
+                        <td>$130M</td>
+                        <td>$800M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Customers</strong></td>
+                        <td>50</td>
+                        <td>200</td>
+                        <td>800</td>
+                        <td>4,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gross Margin</strong></td>
+                        <td>65%</td>
+                        <td>68%</td>
+                        <td>70%</td>
+                        <td>72%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EBITDA</strong></td>
+                        <td>-$2.1M</td>
+                        <td>$4.2M</td>
+                        <td>$32.5M</td>
+                        <td>$240M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EBITDA Margin</strong></td>
+                        <td>-33%</td>
+                        <td>15%</td>
+                        <td>25%</td>
+                        <td>30%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Break-Even:</strong> Q4 2027 | <strong>Payback Period:</strong> 8 months | <strong>LTV/CAC:</strong> 7.1x</p>
+            </div>
+
+            <h3 style="margin-top: 30px;">Key Assumptions:</h3>
+            <ul>
+                <li>Average customer value: $126K annually</li>
+                <li>Customer acquisition cost: $24K</li>
+                <li>Churn rate: 8% annually (improving to 5% by Year 5)</li>
+                <li>Gross margin: 65-72% (improving with scale)</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 11: TEAM -->
+        <div class="slide" id="slide-11">
+            <div class="slide-number">11/20</div>
+            <h2>Team: Industry Veterans with Proven Track Record</h2>
+            
+            <div class="two-column">
+                <div>
+                    <h3>Jess Thompson</h3>
+                    <p style="color: #3b82f6; font-size: 18px; margin-bottom: 15px;">Chief Visionary Officer & Co-Founder</p>
+                    <ul style="font-size: 18px;">
+                        <li>15+ years in life sciences</li>
+                        <li>Former roles at Pfizer, IQVIA, ICON</li>
+                        <li>Clinical research experience at Vanderbilt, UW, U of Louisville</li>
+                        <li>Expert in specimen handling and compliance</li>
+                        <li>Deep understanding of clinical trial operations</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-size: 16px;">📧 jess@clinicalresearchpro.com</p>
+                </div>
+                <div>
+                    <h3>Jason Long</h3>
+                    <p style="color: #3b82f6; font-size: 18px; margin-bottom: 15px;">Chief Operating Officer & Co-Founder</p>
+                    <ul style="font-size: 18px;">
+                        <li>18+ years sales & leadership experience</li>
+                        <li>Former roles at AT&T and State Farm</li>
+                        <li>Proven track record growing startups</li>
+                        <li>Strategic operations and business development</li>
+                        <li>Healthcare technology leadership</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-size: 16px;">📧 jason@clinicalresearchpro.com</p>
+                    <p style="font-size: 16px;">📱 (470) 476-1038</p>
+                </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 40px;">
+                <h3>Advisory Board (Building):</h3>
+                <ul>
+                    <li>Former FDA regulatory affairs executive</li>
+                    <li>Clinical trial operations leader from Top 10 pharma</li>
+                    <li>AI/ML expert from healthcare tech unicorn</li>
+                    <li>Supply chain optimization specialist</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: TECHNOLOGY & PRODUCT -->
+        <div class="slide" id="slide-12">
+            <div class="slide-number">12/20</div>
+            <h2>Technology & Product: 6 AI Models</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>AI Model</th>
+                        <th>Type</th>
+                        <th>Accuracy</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Driver Performance</strong></td>
+                        <td>Random Forest</td>
+                        <td>93%</td>
+                        <td>Match drivers to shipments</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Demand Forecasting</strong></td>
+                        <td>LSTM Neural Net</td>
+                        <td>91%</td>
+                        <td>Predict demand patterns</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Route Optimizer</strong></td>
+                        <td>Genetic Algorithm</td>
+                        <td>96%</td>
+                        <td>Optimize delivery routes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk Assessment</strong></td>
+                        <td>Gradient Boosting</td>
+                        <td>89%</td>
+                        <td>Identify high-risk shipments</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quality Predictor</strong></td>
+                        <td>Deep Neural Net</td>
+                        <td>88%</td>
+                        <td>Predict specimen viability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pricing Engine</strong></td>
+                        <td>Ensemble Model</td>
+                        <td>92%</td>
+                        <td>Dynamic pricing optimization</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Total Features Analyzed:</strong> 820+ features per decision | <strong>Average Accuracy:</strong> 91.5%</p>
+            </div>
+
+            <h3 style="margin-top: 30px;">Additional Technology:</h3>
+            <ul>
+                <li><strong>IoT Sensor Network:</strong> 2,847 active sensors monitoring temperature, humidity, location</li>
+                <li><strong>Blockchain Chain of Custody:</strong> Immutable records for regulatory compliance</li>
+                <li><strong>Real-Time Analytics:</strong> Live dashboards updating every 3 seconds</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 13: OPERATIONS PLAN -->
+        <div class="slide" id="slide-13">
+            <div class="slide-number">13/20</div>
+            <h2>Operations Plan: Scalable Infrastructure</h2>
+            
+            <h3>Driver Network Strategy:</h3>
+            <ul>
+                <li><strong>Recruitment:</strong> Target medical couriers, pharmacy delivery drivers, healthcare workers</li>
+                <li><strong>Training:</strong> 4 comprehensive modules (180 minutes total)
+                    <ul style="margin-left: 30px; margin-top: 10px;">
+                        <li>HIPAA Compliance (45 min)</li>
+                        <li>Specimen Handling (60 min)</li>
+                        <li>Temperature Control (40 min)</li>
+                        <li>Safety & Emergency Response (35 min)</li>
+                    </ul>
+                </li>
+                <li><strong>Certification:</strong> All drivers must pass quizzes (85% minimum) and background checks</li>
+                <li><strong>Equipment:</strong> Provide insulated bags, temperature monitors, GPS trackers</li>
+                <li><strong>Compensation:</strong> $45-$175 per delivery (competitive with Uber/DoorDash)</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">Quality Assurance:</h3>
+            <ul>
+                <li><strong>Real-Time Monitoring:</strong> GPS tracking, temperature alerts, route deviations</li>
+                <li><strong>Performance Metrics:</strong> On-time rate, temperature compliance, customer ratings</li>
+                <li><strong>Automated Alerts:</strong> Immediate notifications for any issues</li>
+                <li><strong>Continuous Improvement:</strong> AI learns from every delivery to optimize future performance</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 14: GROWTH STRATEGY -->
+        <div class="slide" id="slide-14">
+            <div class="slide-number">14/20</div>
+            <h2>Growth Strategy: Scale to Market Leadership</h2>
+            
+            <div class="highlight">
+                <h3>Phase 4: National Expansion (2028-2029)</h3>
+                <ul>
+                    <li>Expand to 800 customers across 25 cities</li>
+                    <li>Driver network: 2,000+ certified drivers</li>
+                    <li>Launch international pilot (Canada, UK)</li>
+                    <li>Target: $130M annual revenue</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Phase 5: Market Leadership (2030+)</h3>
+                <ul>
+                    <li>4,000+ customers globally</li>
+                    <li>10,000+ drivers across 50+ cities</li>
+                    <li>International expansion (EU, Asia-Pacific)</li>
+                    <li>Target: $800M annual revenue</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 30px;">Strategic Initiatives:</h3>
+            <ul>
+                <li><strong>M&A Strategy:</strong> Acquire regional courier companies to accelerate expansion</li>
+                <li><strong>Strategic Partnerships:</strong> Partner with major CROs and pharma companies</li>
+                <li><strong>Product Expansion:</strong> Add patient recruitment, site management, data analytics</li>
+                <li><strong>White-Label Growth:</strong> License platform to pharma companies and CROs</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 15: EXIT STRATEGY -->
+        <div class="slide" id="slide-15">
+            <div class="slide-number">15/20</div>
+            <h2>Exit Strategy: Multiple Paths to Liquidity</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">$150M-$500M</div>
+                    <div class="stat-label">Strategic Acquisition (3-5 years)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$500M-$2B+</div>
+                    <div class="stat-label">IPO (5-7 years)</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Potential Strategic Acquirers:</h3>
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #8b5cf6; margin-bottom: 15px;">Logistics Companies:</h4>
+                    <ul>
+                        <li>FedEx (acquired TNT for $4.8B)</li>
+                        <li>UPS (acquired Marken for $1.8B)</li>
+                        <li>DHL (acquired Polar Speed for $1.1B)</li>
+                    </ul>
+                    
+                    <h4 style="color: #8b5cf6; margin-top: 30px; margin-bottom: 15px;">Healthcare Tech:</h4>
+                    <ul>
+                        <li>Veeva Systems ($30B market cap)</li>
+                        <li>IQVIA ($45B market cap)</li>
+                        <li>Medidata (acquired by Dassault for $5.8B)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #8b5cf6; margin-bottom: 15px;">Pharmaceutical Companies:</h4>
+                    <ul>
+                        <li>Pfizer, Novartis, Roche</li>
+                        <li>Building vertical integration</li>
+                        <li>Control clinical trial logistics</li>
+                    </ul>
+                    
+                    <h4 style="color: #8b5cf6; margin-top: 30px; margin-bottom: 15px;">CRO Companies:</h4>
+                    <ul>
+                        <li>ICON, PPD, Syneos Health</li>
+                        <li>Expand service offerings</li>
+                        <li>Improve trial efficiency</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Comparable Transactions:</strong> Marken ($1.8B), Polar Speed ($1.1B), World Courier (undisclosed, estimated $800M+)</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: RISK ANALYSIS -->
+        <div class="slide" id="slide-16">
+            <div class="slide-number">16/20</div>
+            <h2>Risk Analysis & Mitigation</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Impact</th>
+                        <th>Mitigation Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Regulatory Changes</strong></td>
+                        <td>High</td>
+                        <td>Proactive compliance, regulatory advisory board</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Driver Shortage</strong></td>
+                        <td>Medium</td>
+                        <td>Competitive pay, flexible schedules, referral bonuses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technology Failures</strong></td>
+                        <td>High</td>
+                        <td>Redundant systems, 99.9% uptime SLA, backup protocols</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Competition</strong></td>
+                        <td>Medium</td>
+                        <td>First-mover advantage, AI moat, customer lock-in</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Customer Concentration</strong></td>
+                        <td>Medium</td>
+                        <td>Diversify customer base, no customer >15% of revenue</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Breach</strong></td>
+                        <td>High</td>
+                        <td>SOC 2 Type II, encryption, regular audits, insurance</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Insurance Coverage:</strong> $10M cyber liability, $5M E&O, $2M general liability, $1M per-shipment cargo insurance</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: USE OF FUNDS -->
+        <div class="slide" id="slide-17">
+            <div class="slide-number">17/20</div>
+            <h2>Use of Funds: $4M Seed Round</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">40%</div>
+                    <div class="stat-label">Product Development<br>$1.6M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-label">Marketing & Sales<br>$1.2M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">20%</div>
+                    <div class="stat-label">Operations<br>$800K</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10%</div>
+                    <div class="stat-label">Working Capital<br>$400K</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Detailed Breakdown:</h3>
+            
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #8b5cf6; margin-bottom: 15px;">Product Development ($1.6M):</h4>
+                    <ul>
+                        <li>Engineering team (4 FTEs): $800K</li>
+                        <li>Google Maps API integration: $200K</li>
+                        <li>Payment processing (Stripe): $150K</li>
+                        <li>Mobile apps (iOS/Android): $250K</li>
+                        <li>Infrastructure & hosting: $200K</li>
+                    </ul>
+                    
+                    <h4 style="color: #8b5cf6; margin-top: 30px; margin-bottom: 15px;">Operations ($800K):</h4>
+                    <ul>
+                        <li>Driver recruitment & training: $300K</li>
+                        <li>Equipment & supplies: $200K</li>
+                        <li>Customer success team: $200K</li>
+                        <li>Legal & compliance: $100K</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #8b5cf6; margin-bottom: 15px;">Marketing & Sales ($1.2M):</h4>
+                    <ul>
+                        <li>Content marketing: $300K</li>
+                        <li>Digital advertising: $360K</li>
+                        <li>Events & conferences: $240K</li>
+                        <li>PR & communications: $180K</li>
+                        <li>Partnerships: $120K</li>
+                    </ul>
+                    
+                    <h4 style="color: #8b5cf6; margin-top: 30px; margin-bottom: 15px;">Working Capital ($400K):</h4>
+                    <ul>
+                        <li>Cash reserves for operations</li>
+                        <li>Buffer for unexpected expenses</li>
+                        <li>Bridge to profitability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Runway:</strong> 18 months to profitability | <strong>Milestones:</strong> 50 customers, 500 deliveries, 99%+ compliance</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 18: INVESTMENT TERMS -->
+        <div class="slide" id="slide-18">
+            <div class="slide-number">18/20</div>
+            <h2>Investment Terms & Return Scenarios</h2>
+            
+            <div class="highlight">
+                <h3>The Ask:</h3>
+                <ul style="font-size: 24px;">
+                    <li><strong>Raise:</strong> $4M seed round</li>
+                    <li><strong>Pre-Money Valuation:</strong> $12M</li>
+                    <li><strong>Post-Money Valuation:</strong> $16M</li>
+                    <li><strong>Dilution:</strong> 25%</li>
+                    <li><strong>Security:</strong> Preferred Stock (Series Seed)</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 40px;">Return Scenarios:</h3>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Exit Value</th>
+                        <th>Exit Multiple</th>
+                        <th>Investor Return</th>
+                        <th>IRR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Conservative</strong></td>
+                        <td>$150M</td>
+                        <td>3x revenue</td>
+                        <td>9.4x</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Base Case</strong></td>
+                        <td>$500M</td>
+                        <td>4x revenue</td>
+                        <td>31.3x</td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Optimistic</strong></td>
+                        <td>$1B+</td>
+                        <td>5x revenue</td>
+                        <td>62.5x</td>
+                        <td>110%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <p><strong>Comparable Valuations:</strong> Marken (5.2x revenue), Veeva (15x revenue), Medidata (8x revenue)</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 19: MILESTONES & TIMELINE -->
+        <div class="slide" id="slide-19">
+            <div class="slide-number">19/20</div>
+            <h2>18-Month Milestones (Post-Funding)</h2>
+            
+            <div class="highlight">
+                <h3>Q1 2026 (Months 1-3):</h3>
+                <ul>
+                    <li>Close $4M seed round</li>
+                    <li>Hire core team (4 engineers, 2 sales, 2 ops)</li>
+                    <li>Complete Google Maps & Stripe integration</li>
+                    <li>Launch pilot program with 9 partners</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Q2-Q3 2026 (Months 4-9):</h3>
+                <ul>
+                    <li>Complete 500 pilot deliveries with 99%+ compliance</li>
+                    <li>Recruit and train 100 drivers</li>
+                    <li>Gather testimonials and case studies</li>
+                    <li>Achieve FDA/HIPAA compliance certification</li>
+                    <li>Launch beta program with 15 customers</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Q4 2026 - Q2 2027 (Months 10-18):</h3>
+                <ul>
+                    <li>Scale to 50 customers across 5 cities</li>
+                    <li>Expand driver network to 250+</li>
+                    <li>Launch mobile apps (iOS/Android)</li>
+                    <li>Achieve $500K monthly revenue</li>
+                    <li>Prove unit economics (7.1x LTV/CAC)</li>
+                    <li>Prepare for Series A ($15M at $60M pre-money)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 20: CALL TO ACTION -->
+        <div class="slide" id="slide-20">
+            <div class="slide-number">20/20</div>
+            <div class="cta-box">
+                <h1 style="color: #ffffff; margin-bottom: 30px;">Join Us in Revolutionizing Clinical Trial Logistics</h1>
+                
+                <div style="font-size: 24px; margin-bottom: 40px;">
+                    <p><strong>The Opportunity:</strong></p>
+                    <p>$15.7B market growing at 11.4% annually</p>
+                    <p>First comprehensive AI solution in the space</p>
+                    <p>9 pilot partners ready to launch</p>
+                    <p>Path to $800M revenue in 5 years</p>
+                </div>
+
+                <div style="font-size: 28px; font-weight: bold; margin-bottom: 40px;">
+                    <p>Seeking $4M Seed Round</p>
+                    <p>at $12M Pre-Money Valuation</p>
+                </div>
+
+                <div style="font-size: 20px; margin-top: 40px;">
+                    <p><strong>Contact:</strong></p>
+                    <p>Jason Long, COO</p>
+                    <p>📧 jason@clinicalresearchpro.com</p>
+                    <p>📱 (470) 476-1038</p>
+                    <p style="margin-top: 20px;">Jess Thompson, CVO</p>
+                    <p>📧 jess@clinicalresearchpro.com</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; font-size: 18px; color: rgba(255, 255, 255, 0.7);">
+                <p>© 2025 Clinical Research Pro Corporation</p>
+                <p>Trial Transport℠ - All Rights Reserved</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation">
+        <button class="nav-button" onclick="window.print()">🖨️ Print/Export PDF</button>
+        <button class="nav-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+    </div>
+
+    <script>
+        // Add smooth scrolling for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Trial Transport℠ Pitch Deck Loaded - 20 Slides');
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                window.scrollBy({top: 700, behavior: 'smooth'});
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                window.scrollBy({top: -700, behavior: 'smooth'});
+            }
+        });
+    </script>
+</body>
+</html>

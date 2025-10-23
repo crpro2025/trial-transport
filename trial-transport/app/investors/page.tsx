@@ -1,0 +1,331 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { Navigation } from '@/components/Navigation';
+import { Download, FileText, Presentation, TrendingUp, Rocket, Mail, Phone } from 'lucide-react';
+
+export default function InvestorsPage() {
+  const router = useRouter();
+
+  const documents = [
+    {
+      title: 'Investor Pitch Deck',
+      description: 'Complete 15-slide presentation with financials, team, and market analysis',
+      icon: Presentation,
+      file: '/docs/INVESTOR_PITCH_DECK_FINAL.md',
+      slug: 'pitch-deck',
+      size: '8,000+ words',
+      type: 'Presentation',
+      color: 'from-blue-500 to-purple-600',
+    },
+    {
+      title: 'Executive Summary',
+      description: 'Detailed overview for serious investors with comprehensive analysis',
+      icon: FileText,
+      file: '/docs/EXECUTIVE_SUMMARY.md',
+      slug: 'executive-summary',
+      size: '3,500+ words',
+      type: 'Document',
+      color: 'from-purple-500 to-pink-600',
+    },
+    {
+      title: 'One-Pager',
+      description: 'Quick reference for initial meetings and email attachments',
+      icon: FileText,
+      file: '/docs/ONE_PAGER.md',
+      slug: 'one-pager',
+      size: '800 words',
+      type: 'Document',
+      color: 'from-cyan-500 to-blue-600',
+    },
+    {
+      title: 'Advanced Features Roadmap',
+      description: '15 game-changing features with $216M valuation impact',
+      icon: Rocket,
+      file: '/docs/ADVANCED_FEATURES_ROADMAP.md',
+      slug: 'features-roadmap',
+      size: '6,000+ words',
+      type: 'Technical',
+      color: 'from-green-500 to-cyan-600',
+    },
+    {
+      title: 'Complete Materials Guide',
+      description: 'How to use all investor materials and next steps',
+      icon: TrendingUp,
+      file: '/docs/INVESTOR_MATERIALS_COMPLETE.md',
+      slug: 'materials-guide',
+      size: '4,000+ words',
+      type: 'Guide',
+      color: 'from-orange-500 to-red-600',
+    },
+  ];
+
+  const keyMetrics = [
+    { label: 'Seeking', value: '$4M', sublabel: 'Seed Round' },
+    { label: 'Valuation', value: '$12M', sublabel: 'Pre-Money' },
+    { label: 'Market Size', value: '$15.7B', sublabel: 'By 2030' },
+    { label: 'Year 5 Revenue', value: '$120M', sublabel: 'Projected' },
+  ];
+
+  const highlights = [
+    {
+      icon: '🎯',
+      title: 'Massive Market',
+      description: '$15.7B by 2030, 11.4% CAGR, 450K+ active trials',
+    },
+    {
+      icon: '👥',
+      title: 'Proven Team',
+      description: '15+ years at Pfizer/IQVIA/ICON, 18+ years scaling businesses',
+    },
+    {
+      icon: '🤖',
+      title: 'Technology Moat',
+      description: '6 AI models expanding to 15+, 820+ features analyzed',
+    },
+    {
+      icon: '💰',
+      title: 'Strong Economics',
+      description: '47% margins, 7.1x LTV/CAC, 8-month payback',
+    },
+    {
+      icon: '🚀',
+      title: 'Clear Exit Path',
+      description: 'Multiple strategic acquirers, $150M-$2B+ potential',
+    },
+    {
+      icon: '⚡',
+      title: 'Perfect Timing',
+      description: 'Market ready for disruption, technology matured',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        {/* Navigation */}
+        <Navigation />
+
+      {/* Animated Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Investor <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Resources</span>
+              </h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Complete investment materials for Trial Transport - Revolutionizing clinical trial logistics with AI
+              </p>
+              
+              {/* Key Metrics */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+                {keyMetrics.map((metric, index) => (
+                  <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4">
+                    <div className="text-sm text-gray-400 mb-1">{metric.label}</div>
+                    <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                    <div className="text-xs text-gray-500">{metric.sublabel}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => window.location.href = 'mailto:jason@clinicalresearchpro.com'}
+                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all flex items-center justify-center gap-2"
+                >
+                  <Mail className="w-5 h-5" />
+                  Contact Jason Long
+                </button>
+                <button
+                  onClick={() => window.location.href = 'tel:+14704761038'}
+                  className="px-8 py-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-lg font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  (470) 476-1038
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Investment Highlights */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">Why Invest in Trial Transport</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {highlights.map((highlight, index) => (
+                <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-cyan-500/50 transition-all">
+                  <div className="text-4xl mb-4">{highlight.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{highlight.title}</h3>
+                  <p className="text-gray-400 text-sm">{highlight.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Documents Section */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">Investment Materials</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {documents.map((doc, index) => {
+                const Icon = doc.icon;
+                return (
+                  <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-cyan-500/50 transition-all group">
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${doc.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded-full">{doc.type}</span>
+                      <span className="text-xs text-gray-500">{doc.size}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">{doc.title}</h3>
+                    <p className="text-gray-400 text-sm mb-4">{doc.description}</p>
+                    <button
+                      onClick={() => router.push(`/investors/documents/${doc.slug}`)}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all text-sm"
+                    >
+                      <Download className="w-4 h-4" />
+                      View Document
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Financial Projections */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">5-Year Financial Projections</h2>
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="pb-4 text-cyan-400 font-semibold">Year</th>
+                    <th className="pb-4 text-cyan-400 font-semibold">Revenue</th>
+                    <th className="pb-4 text-cyan-400 font-semibold">EBITDA</th>
+                    <th className="pb-4 text-cyan-400 font-semibold">Customers</th>
+                    <th className="pb-4 text-cyan-400 font-semibold">Growth</th>
+                  </tr>
+                </thead>
+                <tbody className="text-white">
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2026</td>
+                    <td className="py-4">$150K</td>
+                    <td className="py-4 text-red-400">-$3.2M</td>
+                    <td className="py-4">15</td>
+                    <td className="py-4 text-gray-500">-</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2027</td>
+                    <td className="py-4">$6.3M</td>
+                    <td className="py-4 text-red-400">-$2.1M</td>
+                    <td className="py-4">200</td>
+                    <td className="py-4 text-green-400">4100%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2028</td>
+                    <td className="py-4">$28M</td>
+                    <td className="py-4 text-green-400">$2.8M</td>
+                    <td className="py-4">800</td>
+                    <td className="py-4 text-green-400">344%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2029</td>
+                    <td className="py-4">$65M</td>
+                    <td className="py-4 text-green-400">$13M</td>
+                    <td className="py-4">2,000</td>
+                    <td className="py-4 text-green-400">132%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-semibold">2030</td>
+                    <td className="py-4">$120M</td>
+                    <td className="py-4 text-green-400">$30M</td>
+                    <td className="py-4">4,000</td>
+                    <td className="py-4 text-green-400">85%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">Leadership Team</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-cyan-500/50 transition-all">
+                <div className="text-6xl mb-4">👩‍💼</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Jess Thompson</h3>
+                <p className="text-cyan-400 font-semibold mb-4">Chief Visionary Officer & Co-Founder</p>
+                <p className="text-gray-400 text-sm mb-4">
+                  15+ years in life sciences industry with positions at Pfizer, IQVIA, ICON. Clinical research experience at Vanderbilt, University of Washington, University of Louisville.
+                </p>
+                <a href="mailto:jess@clinicalresearchpro.com" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  jess@clinicalresearchpro.com
+                </a>
+              </div>
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-cyan-500/50 transition-all">
+                <div className="text-6xl mb-4">👨‍💼</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Jason Long</h3>
+                <p className="text-cyan-400 font-semibold mb-4">Chief Operating Officer & Co-Founder</p>
+                <p className="text-gray-400 text-sm mb-4">
+                  18+ years of sales and leadership experience. Former leadership roles at AT&T and State Farm. Proven track record growing and scaling startups.
+                </p>
+                <div className="space-y-2">
+                  <a href="mailto:jason@clinicalresearchpro.com" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                    <Mail className="w-4 h-4" />
+                    jason@clinicalresearchpro.com
+                  </a>
+                  <a href="tel:+14704761038" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    (470) 476-1038
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-12">
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Discuss Investment?</h2>
+              <p className="text-gray-300 text-lg mb-8">
+                Schedule a meeting to review our complete pitch deck, financial model, and product demo.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => window.location.href = 'mailto:jason@clinicalresearchpro.com?subject=Investment Inquiry - Trial Transport'}
+                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+                >
+                  Schedule Meeting
+                </button>
+                <button
+                  onClick={() => router.push('/')}
+                  className="px-8 py-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-lg font-semibold hover:bg-white/20 transition-all"
+                >
+                  View Platform Demo
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
