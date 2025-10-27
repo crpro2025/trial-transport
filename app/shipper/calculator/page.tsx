@@ -154,7 +154,7 @@ export default function PricingCalculator() {
                     onChange={(e) => setDistance(Number(e.target.value))}
                     className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer"
                   />
-                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <div className="flex justify-between text-xs text-gray-400 mt-1">
                     <span>1 mi</span>
                     <span>500 mi</span>
                   </div>

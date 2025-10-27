@@ -1,0 +1,8 @@
+371:              <p className="text-gray-400">Revenue (YTD)</p>
+444:          {/* Pre-Revenue Status Banner */}
+574:                  <p className="text-xs text-gray-400">Revenue</p>
+586:                  <p className="text-xs text-gray-400">Revenue</p>
+598:                  <p className="text-xs text-gray-400">Revenue</p>
+610:                  <p className="text-xs text-gray-400">Revenue</p>
+622:                  <p className="text-xs text-gray-400">Revenue (2030)</p>
+945:                  <p className="text-white font-semibold mb-2">Revenue Generation</p>

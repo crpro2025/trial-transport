@@ -1,0 +1,9 @@
+./fix_pitch_deck.py
+./.next/server/app/investors
+./.next/server/app/investors.html
+./.next/server/app/investors.meta
+./.next/server/app/investors.rsc
+./.next/static/chunks/app/investors
+./.next/types/app/investors
+./app/investors
+./pitch-deck.html

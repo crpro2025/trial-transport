@@ -1,0 +1,50 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { Navigation } from '@/components/Navigation';
+import { MapPin, Thermometer, Clock, Package, CheckCircle, AlertCircle, TrendingUp, Navigation as NavIcon } from 'lucide-react';
+
+export default function TrackingPage() {
+  const params = useParams();
+  const router = useRouter();
+  const trackingId = params.id as string;
+  
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [temperature, setTemperature] = useState(2.5);
+  const [elapsedTime, setElapsedTime] = useState(0);
+
+  // Simulate real-time tracking
+  useEffect(() => {
+    const positionInterval = setInterval(() => {
+      setCurrentPosition(prev => {
+        if (prev >= 100) return 100;
+        return prev + 0.5; // Move 0.5% every second
+      });
+    }, 1000);
+
+    const tempInterval = setInterval(() => {
+      setTemperature(prev => {
+        const variation = (Math.random() - 0.5) * 0.3;
+        const newTemp = prev + variation;
+        return Math.max(2.0, Math.min(4.0, newTemp)); // Keep between 2-4°C
+      });
+    }, 2000);
+
+    const timeInterval = setInterval(() => {
+      setElapsedTime(prev => prev + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(positionInterval);
+      clearInterval(tempInterval);
+      clearInterval(timeInterval);
+    };
+  }, []);
+
+  const shipment = {
+    id: trackingId,
+    type: 'Refrigerated',
+    status: currentPosition >= 100 ? 'Delivered' : currentPosition > 0 ? 'In Transit' : 'Pending',
+    origin: {
+      name: 'Vanderbilt University Medical Center',

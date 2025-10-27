@@ -1,0 +1,41 @@
+                  </tr>
+                </thead>
+                <tbody className="text-white">
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2026</td>
+                    <td className="py-4">$150K</td>
+                    <td className="py-4 text-red-400">-$3.2M</td>
+                    <td className="py-4">15</td>
+                    <td className="py-4 text-gray-500">-</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2027</td>
+                    <td className="py-4">$6.3M</td>
+                    <td className="py-4 text-red-400">-$2.1M</td>
+                    <td className="py-4">200</td>
+                    <td className="py-4 text-green-400">4100%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2028</td>
+                    <td className="py-4">$28M</td>
+                    <td className="py-4 text-green-400">$2.8M</td>
+                    <td className="py-4">800</td>
+                    <td className="py-4 text-green-400">344%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2029</td>
+                    <td className="py-4">$65M</td>
+                    <td className="py-4 text-green-400">$13M</td>
+                    <td className="py-4">2,000</td>
+                    <td className="py-4 text-green-400">132%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-semibold">2030</td>
+                    <td className="py-4">$26.3M</td>
+                    <td className="py-4 text-green-400">$30M</td>
+                    <td className="py-4">4,000</td>
+                    <td className="py-4 text-green-400">85%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>

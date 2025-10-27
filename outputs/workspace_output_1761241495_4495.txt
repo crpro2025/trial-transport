@@ -1,0 +1,2 @@
+components/DashboardNavigation.tsx:83:                    src="/crpro-logo.png" 
+components/Footer.tsx:36:                    src="/crpro-logo.png" 

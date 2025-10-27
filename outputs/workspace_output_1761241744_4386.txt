@@ -1,0 +1,11 @@
+                  </div>
+                  <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                    <span className="text-gray-300">Dilution</span>
+                    <span className="text-xl font-bold text-yellow-400">25%</span>
+                  </div>
+                  <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                    <span className="text-gray-300">Runway</span>
+                    <span className="text-xl font-bold text-blue-400">18 months</span>
+                  </div>
+                </div>
+              </div>

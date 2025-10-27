@@ -2,64 +2,17 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import { ArrowLeft, Download, FileText, AlertCircle } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { documentData } from '../document-data';
 
 export default function DocumentPage() {
   const params = useParams();
   const router = useRouter();
-  const [content, setContent] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  const documents: { [key: string]: { title: string; file: string } } = {
-    'pitch-deck': {
-      title: 'Investor Pitch Deck',
-      file: '/docs/INVESTOR_PITCH_DECK_FINAL.md',
-    },
-    'executive-summary': {
-      title: 'Executive Summary',
-      file: '/docs/EXECUTIVE_SUMMARY.md',
-    },
-    'one-pager': {
-      title: 'One-Pager',
-      file: '/docs/ONE_PAGER.md',
-    },
-    'features-roadmap': {
-      title: 'Advanced Features Roadmap',
-      file: '/docs/ADVANCED_FEATURES_ROADMAP.md',
-    },
-    'materials-guide': {
-      title: 'Complete Materials Guide',
-      file: '/docs/INVESTOR_MATERIALS_COMPLETE.md',
-    },
-  };
 
   const slug = params.slug as string;
-  const doc = documents[slug];
-
-  useEffect(() => {
-    if (doc) {
-      console.log('Fetching document from:', doc.file);
-      fetch(doc.file)
-        .then((res) => {
-          console.log('Response status:', res.status);
-          if (!res.ok) {
-            throw new Error(`Failed to load document: ${res.status} ${res.statusText}`);
-          }
-          return res.text();
-        })
-        .then((text) => {
-          console.log('Document loaded, length:', text.length);
-          setContent(text);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error('Error loading document:', err);
-          setError(err.message);
-          setLoading(false);
-        });
-    }
-  }, [doc]);
+  const doc = documentData[slug];
+  const content = doc?.content || '';
+  const loading = false;
+  const error = '';
 
   // Enhanced markdown to HTML converter
   const formatMarkdown = (text: string) => {

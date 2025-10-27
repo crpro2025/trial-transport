@@ -1,0 +1,2 @@
+67:    { label: 'Year 5 Revenue', value: '$120M', sublabel: 'Projected' },
+253:                    <td className="py-4">$120M</td>

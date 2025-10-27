@@ -47,7 +47,7 @@ export default function AdminUsers() {
       case 'active': return 'text-green-400 bg-green-500/20';
       case 'pending': return 'text-yellow-400 bg-yellow-500/20';
       case 'suspended': return 'text-red-400 bg-red-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      default: return 'text-gray-400 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-9000/20';
     }
   };
 
@@ -56,7 +56,7 @@ export default function AdminUsers() {
       case 'driver': return 'text-blue-400 bg-blue-500/20';
       case 'shipper': return 'text-purple-400 bg-purple-500/20';
       case 'admin': return 'text-cyan-400 bg-cyan-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      default: return 'text-gray-400 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-9000/20';
     }
   };
 
@@ -207,7 +207,7 @@ export default function AdminUsers() {
                             )}
                           </div>
                         ) : (
-                          <p className="text-gray-500 text-sm">No activity</p>
+                          <p className="text-gray-400 text-sm">No activity</p>
                         )}
                       </td>
                       <td className="px-6 py-4">

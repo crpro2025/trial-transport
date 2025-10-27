@@ -101,21 +101,21 @@ export default function DriverMessagesPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <DashboardNavigation role="driver" />
       <DemoDataBadge />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Messages</h1>
-          <p className="text-gray-600 mt-2">Communicate with shippers about your deliveries</p>
+          <h1 className="text-3xl font-bold text-white">Messages</h1>
+          <p className="text-gray-300 mt-2">Communicate with shippers about your deliveries</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-3 h-[600px]">
             {/* Conversations List */}
-            <div className="lg:col-span-1 border-r border-gray-200 flex flex-col">
-              <div className="p-4 border-b border-gray-200">
+            <div className="lg:col-span-1 border-r border-white/20 flex flex-col">
+              <div className="p-4 border-b border-white/20">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -123,7 +123,7 @@ export default function DriverMessagesPage() {
                     placeholder="Search conversations..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default function DriverMessagesPage() {
                   <button
                     key={conv.id}
                     onClick={() => setSelectedConversation(conv.id)}
-                    className={`w-full p-4 border-b border-gray-200 hover:bg-gray-50 transition-colors text-left ${
+                    className={`w-full p-4 border-b border-white/20 hover:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 transition-colors text-left ${
                       selectedConversation === conv.id ? 'bg-blue-50' : ''
                     }`}
                   >
@@ -143,7 +143,7 @@ export default function DriverMessagesPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-1">
-                          <p className="font-semibold text-gray-900 truncate">
+                          <p className="font-semibold text-white truncate">
                             {conv.shipperName}
                           </p>
                           {conv.unread && (
@@ -152,12 +152,12 @@ export default function DriverMessagesPage() {
                         </div>
                         <div className="flex items-center gap-1 mb-1">
                           <Package className="w-3 h-3 text-gray-400" />
-                          <p className="text-xs text-gray-500">{conv.shipmentId}</p>
+                          <p className="text-xs text-gray-400">{conv.shipmentId}</p>
                         </div>
-                        <p className="text-sm text-gray-600 truncate">
+                        <p className="text-sm text-gray-300 truncate">
                           {conv.lastMessage}
                         </p>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <p className="text-xs text-gray-400 mt-1">
                           {conv.timestamp}
                         </p>
                       </div>
@@ -172,14 +172,14 @@ export default function DriverMessagesPage() {
               {selectedConversation ? (
                 <>
                   {/* Chat Header */}
-                  <div className="p-4 border-b border-gray-200 bg-gray-50">
+                  <div className="p-4 border-b border-white/20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center text-white font-semibold">
                         BR
                       </div>
                       <div>
-                        <p className="font-semibold text-gray-900">BioTech Research Inc.</p>
-                        <div className="flex items-center gap-1 text-xs text-gray-500">
+                        <p className="font-semibold text-white">BioTech Research Inc.</p>
+                        <div className="flex items-center gap-1 text-xs text-gray-400">
                           <Package className="w-3 h-3" />
                           <span>Shipment: SH-2025-001</span>
                         </div>
@@ -198,12 +198,12 @@ export default function DriverMessagesPage() {
                           className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                             msg.sender === 'driver'
                               ? 'bg-blue-600 text-white'
-                              : 'bg-gray-200 text-gray-900'
+                              : 'bg-gray-200 text-white'
                           }`}
                         >
                           <p className="text-sm">{msg.message}</p>
                           <p className={`text-xs mt-1 ${
-                            msg.sender === 'driver' ? 'text-blue-200' : 'text-gray-500'
+                            msg.sender === 'driver' ? 'text-blue-200' : 'text-gray-400'
                           }`}>
                             {msg.timestamp}
                           </p>
@@ -213,7 +213,7 @@ export default function DriverMessagesPage() {
                   </div>
 
                   {/* Message Input */}
-                  <div className="p-4 border-t border-gray-200 bg-gray-50">
+                  <div className="p-4 border-t border-white/20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
                     <div className="flex gap-2">
                       <input
                         type="text"
@@ -221,7 +221,7 @@ export default function DriverMessagesPage() {
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                         placeholder="Type your message..."
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="flex-1 px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                       <button
                         onClick={handleSendMessage}
@@ -235,7 +235,7 @@ export default function DriverMessagesPage() {
                   </div>
                 </>
               ) : (
-                <div className="flex-1 flex items-center justify-center text-gray-500">
+                <div className="flex-1 flex items-center justify-center text-gray-400">
                   <div className="text-center">
                     <MessageSquare className="w-16 h-16 mx-auto mb-4 text-gray-400" />
                     <p className="text-lg font-medium">Select a conversation</p>

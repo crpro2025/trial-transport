@@ -1,0 +1,50 @@
+
+> trial-transport@1.0.0 build
+> prisma generate && next build
+
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v6.17.1) to ./node_modules/@prisma/client in 234ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+
+  ▲ Next.js 14.2.5
+  - Environments: .env
+
+   Creating an optimized production build ...
+ ⚠ Compiled with warnings
+
+./app/track/[id]/page.tsx
+Attempted import error: 'Footer' is not exported from '@/components/Footer' (imported as 'Footer').
+
+Import trace for requested module:
+./app/track/[id]/page.tsx
+
+ ⚠ Compiled with warnings
+
+./app/track/[id]/page.tsx
+Attempted import error: 'Footer' is not exported from '@/components/Footer' (imported as 'Footer').
+
+Import trace for requested module:
+./app/track/[id]/page.tsx
+
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./app/track/[id]/page.tsx:6:10
+Type error: Module '"@/components/Footer"' has no exported member 'Footer'. Did you mean to use 'import Footer from "@/components/Footer"' instead?
+
+[0m [90m 4 |[39m [36mimport[39m { useParams[33m,[39m useRouter } [36mfrom[39m [32m'next/navigation'[39m[33m;[39m[0m
+[0m [90m 5 |[39m [36mimport[39m { [33mDashboardNavigation[39m } [36mfrom[39m [32m'@/components/DashboardNavigation'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mFooter[39m } [36mfrom[39m [32m'@/components/Footer'[39m[33m;[39m[0m
+[0m [90m   |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m [36mimport[39m { [33mMapPin[39m[33m,[39m [33mThermometer[39m[33m,[39m [33mClock[39m[33m,[39m [33mPackage[39m[33m,[39m [33mCheckCircle[39m[33m,[39m [33mAlertCircle[39m[33m,[39m [33mTrendingUp[39m[33m,[39m [33mNavigation[39m [36mas[39m [33mNavIcon[39m } [36mfrom[39m [32m'lucide-react'[39m[33m;[39m[0m
+[0m [90m 8 |[39m[0m
+[0m [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mTrackingPage[39m() {[0m

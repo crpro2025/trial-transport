@@ -35,9 +35,9 @@ export default function Footer() {
                   <Image 
                     src="/crpro-logo.png" 
                     alt="Clinical Research Pro" 
-                    width={140} 
-                    height={48}
-                    className="h-8 w-auto opacity-80 group-hover:opacity-100 transition-opacity"
+                    width={220} 
+                    height={74}
+                    className="h-14 w-auto opacity-80 group-hover:opacity-100 transition-opacity"
                   />
                 </a>
                 <a 

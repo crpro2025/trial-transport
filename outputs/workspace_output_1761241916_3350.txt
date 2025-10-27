@@ -1,0 +1,21 @@
+                    <td className="py-4 text-green-400">$2.8M</td>
+                    <td className="py-4">800</td>
+                    <td className="py-4 text-green-400">344%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4 font-semibold">2029</td>
+                    <td className="py-4">$65M</td>
+                    <td className="py-4 text-green-400">$13M</td>
+                    <td className="py-4">2,000</td>
+                    <td className="py-4 text-green-400">132%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-semibold">2030</td>
+                    <td className="py-4">$26.3M</td>
+                    <td className="py-4 text-green-400">$30M</td>
+                    <td className="py-4">4,000</td>
+                    <td className="py-4 text-green-400">85%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>

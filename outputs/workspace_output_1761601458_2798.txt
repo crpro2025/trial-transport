@@ -1,0 +1,4 @@
+total 0
+drwxr-xr-x 3 root root 28 Oct 23 16:53 .
+drwxr-xr-x 3 root root 51 Oct 23 17:52 ..
+drwxr-xr-x 2 root root 30 Oct 23 16:53 [slug]

@@ -82,9 +82,9 @@ export function DashboardNavigation({ role }: DashboardNavigationProps) {
                   <Image 
                     src="/crpro-logo.png" 
                     alt="Clinical Research Pro" 
-                    width={120} 
-                    height={40}
-                    className="h-6 w-auto"
+                    width={200} 
+                    height={67}
+                    className="h-12 w-auto"
                   />
                 </a>
                 <span className="text-gray-600">|</span>

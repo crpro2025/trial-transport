@@ -1,0 +1,1 @@
+89:      description: '47% margins, 7.1x LTV/CAC, 8-month payback',

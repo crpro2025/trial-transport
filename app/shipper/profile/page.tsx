@@ -69,22 +69,22 @@ export default function ShipperProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <DashboardNavigation role="shipper" />
       <DemoDataBadge />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Profile Settings</h1>
-          <p className="text-gray-600 mt-2">Manage your account information and preferences</p>
+          <h1 className="text-3xl font-bold text-white">Profile Settings</h1>
+          <p className="text-gray-300 mt-2">Manage your account information and preferences</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Profile Photo */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Profile Photo</h2>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6">
+              <h2 className="text-lg font-semibold text-white mb-4">Profile Photo</h2>
               
               <div className="flex flex-col items-center">
                 <div className="relative">
@@ -108,11 +108,11 @@ export default function ShipperProfilePage() {
                   )}
                 </div>
                 
-                <h3 className="mt-4 text-xl font-semibold text-gray-900">
+                <h3 className="mt-4 text-xl font-semibold text-white">
                   {formData.firstName} {formData.lastName}
                 </h3>
-                <p className="text-gray-600">{formData.companyName}</p>
-                <p className="text-sm text-gray-500 mt-1">{formData.email}</p>
+                <p className="text-gray-300">{formData.companyName}</p>
+                <p className="text-sm text-gray-400 mt-1">{formData.email}</p>
               </div>
 
               {!isEditing && (
@@ -126,20 +126,20 @@ export default function ShipperProfilePage() {
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mt-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Account Stats</h2>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6 mt-6">
+              <h2 className="text-lg font-semibold text-white mb-4">Account Stats</h2>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Total Shipments</span>
-                  <span className="font-semibold text-gray-900">142</span>
+                  <span className="text-gray-300">Total Shipments</span>
+                  <span className="font-semibold text-white">142</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Active Shipments</span>
-                  <span className="font-semibold text-gray-900">8</span>
+                  <span className="text-gray-300">Active Shipments</span>
+                  <span className="font-semibold text-white">8</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Member Since</span>
-                  <span className="font-semibold text-gray-900">Jan 2025</span>
+                  <span className="text-gray-300">Member Since</span>
+                  <span className="font-semibold text-white">Jan 2025</span>
                 </div>
               </div>
             </div>
@@ -148,17 +148,17 @@ export default function ShipperProfilePage() {
           {/* Right Column - Profile Information */}
           <div className="lg:col-span-2 space-y-6">
             {/* Personal Information */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <User className="w-5 h-5 text-blue-600" />
-                  <h2 className="text-lg font-semibold text-gray-900">Personal Information</h2>
+                  <h2 className="text-lg font-semibold text-white">Personal Information</h2>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     First Name
                   </label>
                   <input
@@ -167,12 +167,12 @@ export default function ShipperProfilePage() {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Last Name
                   </label>
                   <input
@@ -181,12 +181,12 @@ export default function ShipperProfilePage() {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Email Address
                   </label>
                   <input
@@ -195,12 +195,12 @@ export default function ShipperProfilePage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Phone Number
                   </label>
                   <input
@@ -209,22 +209,22 @@ export default function ShipperProfilePage() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
               </div>
             </div>
 
             {/* Company Information */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6">
               <div className="flex items-center gap-2 mb-6">
                 <Building className="w-5 h-5 text-blue-600" />
-                <h2 className="text-lg font-semibold text-gray-900">Company Information</h2>
+                <h2 className="text-lg font-semibold text-white">Company Information</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Company Name
                   </label>
                   <input
@@ -233,12 +233,12 @@ export default function ShipperProfilePage() {
                     value={formData.companyName}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Address
                   </label>
                   <input
@@ -247,12 +247,12 @@ export default function ShipperProfilePage() {
                     value={formData.companyAddress}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     City
                   </label>
                   <input
@@ -261,12 +261,12 @@ export default function ShipperProfilePage() {
                     value={formData.city}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     State
                   </label>
                   <input
@@ -275,12 +275,12 @@ export default function ShipperProfilePage() {
                     value={formData.state}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     ZIP Code
                   </label>
                   <input
@@ -289,12 +289,12 @@ export default function ShipperProfilePage() {
                     value={formData.zipCode}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Country
                   </label>
                   <input
@@ -303,22 +303,22 @@ export default function ShipperProfilePage() {
                     value={formData.country}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
               </div>
             </div>
 
             {/* Billing Information */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6">
               <div className="flex items-center gap-2 mb-6">
                 <CreditCard className="w-5 h-5 text-blue-600" />
-                <h2 className="text-lg font-semibold text-gray-900">Billing Information</h2>
+                <h2 className="text-lg font-semibold text-white">Billing Information</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Tax ID / EIN
                   </label>
                   <input
@@ -327,12 +327,12 @@ export default function ShipperProfilePage() {
                     value={formData.taxId}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Billing Email
                   </label>
                   <input
@@ -341,12 +341,12 @@ export default function ShipperProfilePage() {
                     value={formData.billingEmail}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
                     Billing Phone
                   </label>
                   <input
@@ -355,7 +355,7 @@ export default function ShipperProfilePage() {
                     value={formData.billingPhone}
                     onChange={handleInputChange}
                     disabled={!isEditing}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                    className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                   />
                 </div>
               </div>
@@ -366,7 +366,7 @@ export default function ShipperProfilePage() {
               <div className="flex gap-4 justify-end">
                 <button
                   onClick={handleCancel}
-                  className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium flex items-center gap-2"
+                  className="px-6 py-2 border border-white/30 text-gray-200 rounded-lg hover:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 transition-colors font-medium flex items-center gap-2"
                 >
                   <X className="w-4 h-4" />
                   Cancel

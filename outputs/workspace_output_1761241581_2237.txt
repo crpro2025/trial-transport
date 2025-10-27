@@ -1,0 +1,50 @@
+      </header>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Stats Grid */}
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div className="bg-blue-100 p-3 rounded-lg">
+                <Package className="w-6 h-6 text-blue-600" />
+              </div>
+              <span className="text-2xl font-bold text-gray-900">{analytics?.activeShipments || 0}</span>
+            </div>
+            <div className="text-sm font-semibold text-gray-700">Active Shipments</div>
+            <div className="text-xs text-gray-500 mt-1">Currently in transit</div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div className="bg-green-100 p-3 rounded-lg">
+                <CheckCircle className="w-6 h-6 text-green-600" />
+              </div>
+              <span className="text-2xl font-bold text-gray-900">{analytics?.onTimeDeliveryRate || 0}%</span>
+            </div>
+            <div className="text-sm font-semibold text-gray-700">On-Time Rate</div>
+            <div className="text-xs text-gray-500 mt-1">Last 30 days</div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div className="bg-purple-100 p-3 rounded-lg">
+                <Clock className="w-6 h-6 text-purple-600" />
+              </div>
+              <span className="text-2xl font-bold text-gray-900">{analytics?.averageDeliveryTime || 0}m</span>
+            </div>
+            <div className="text-sm font-semibold text-gray-700">Avg Delivery Time</div>
+            <div className="text-xs text-gray-500 mt-1">Minutes per shipment</div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div className="bg-orange-100 p-3 rounded-lg">
+                <Thermometer className="w-6 h-6 text-orange-600" />
+              </div>
+              <span className="text-2xl font-bold text-gray-900">{analytics?.temperatureComplianceRate || 0}%</span>
+            </div>
+            <div className="text-sm font-semibold text-gray-700">Temp Compliance</div>
+            <div className="text-xs text-gray-500 mt-1">Within range</div>
+          </div>
+        </div>
+

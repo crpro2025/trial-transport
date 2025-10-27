@@ -1,0 +1,2 @@
+194:                      onClick={() => router.push(`/investors/documents/${doc.slug}`)}
+319:                  onClick={() => router.push('/')}

@@ -1,0 +1,11 @@
+                </div>
+                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl">
+                  <span className="text-white font-semibold">Gross Margin</span>
+                  <span className="text-2xl font-bold text-green-400">47%</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                  <span className="text-gray-300">LTV / CAC Ratio</span>
+                  <span className="text-xl font-bold text-cyan-400">7.1x</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                  <span className="text-gray-300">Payback Period</span>

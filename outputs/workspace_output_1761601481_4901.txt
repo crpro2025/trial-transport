@@ -1,0 +1,8 @@
+total 72
+drwxr-xr-x 2 root root   188 Oct 23 16:53 .
+drwxr-xr-x 3 root root    52 Oct 23 16:53 ..
+-rw-r--r-- 1 root root 15766 Oct 23 16:53 ADVANCED_FEATURES_ROADMAP.md
+-rw-r--r-- 1 root root 10424 Oct 23 16:53 EXECUTIVE_SUMMARY.md
+-rw-r--r-- 1 root root 12280 Oct 23 16:53 INVESTOR_MATERIALS_COMPLETE.md
+-rw-r--r-- 1 root root 22135 Oct 23 16:53 INVESTOR_PITCH_DECK_FINAL.md
+-rw-r--r-- 1 root root  4789 Oct 23 16:53 ONE_PAGER.md

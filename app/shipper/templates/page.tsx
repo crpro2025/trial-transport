@@ -30,7 +30,7 @@ export default function ShipmentTemplates() {
       case 'critical': return 'text-red-400 bg-red-500/20';
       case 'urgent': return 'text-orange-400 bg-orange-500/20';
       case 'standard': return 'text-blue-400 bg-blue-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      default: return 'text-gray-400 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-9000/20';
     }
   };
 

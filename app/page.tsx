@@ -594,7 +594,7 @@ export default function InvestorHomePage() {
                 <div className="text-xl font-bold text-purple-400 mb-2">Market Launch</div>
                 <div className="text-xs text-gray-500 mb-3">12 months</div>
                 <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-2xl font-bold text-white mb-1">$6.3M</p>
+                  <p className="text-2xl font-bold text-white mb-1">$1.3M</p>
                   <p className="text-xs text-gray-400">Revenue</p>
                   <p className="text-sm text-cyan-400 mt-2">200 customers</p>
                   <p className="text-xs text-gray-500">Full launch</p>
@@ -606,7 +606,7 @@ export default function InvestorHomePage() {
                 <div className="text-xl font-bold text-green-400 mb-2">Series A & Scale</div>
                 <div className="text-xs text-gray-500 mb-3">12 months</div>
                 <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-2xl font-bold text-white mb-1">$28M</p>
+                  <p className="text-2xl font-bold text-white mb-1">$5.3M</p>
                   <p className="text-xs text-gray-400">Revenue</p>
                   <p className="text-sm text-cyan-400 mt-2">800 customers</p>
                   <p className="text-xs text-gray-500">$20M Series A</p>
@@ -618,10 +618,10 @@ export default function InvestorHomePage() {
                 <div className="text-xl font-bold text-cyan-400 mb-2">Profitability</div>
                 <div className="text-xs text-gray-500 mb-3">24 months</div>
                 <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-2xl font-bold text-green-400 mb-1">$120M</p>
+                  <p className="text-2xl font-bold text-green-400 mb-1">$26.3M</p>
                   <p className="text-xs text-gray-400">Revenue (2030)</p>
                   <p className="text-sm text-cyan-400 mt-2">4,000 customers</p>
-                  <p className="text-xs text-green-400">Break-even 2029</p>
+                  <p className="text-xs text-green-400">Profitable Year 1</p>
                 </div>
               </div>
             </div>
@@ -643,15 +643,15 @@ export default function InvestorHomePage() {
                 </div>
                 <div className="flex justify-between items-center p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl">
                   <span className="text-white font-semibold">Gross Margin</span>
-                  <span className="text-2xl font-bold text-green-400">47%</span>
+                  <span className="text-2xl font-bold text-green-400">68%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
                   <span className="text-gray-300">LTV / CAC Ratio</span>
-                  <span className="text-xl font-bold text-cyan-400">7.1x</span>
+                  <span className="text-xl font-bold text-cyan-400">10x</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
                   <span className="text-gray-300">Payback Period</span>
-                  <span className="text-xl font-bold text-blue-400">8 months</span>
+                  <span className="text-xl font-bold text-blue-400">2.4 months</span>
                 </div>
               </div>
             </div>

@@ -47,18 +47,18 @@ export default function AvailableDeliveriesPage() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
+      <header className="bg-white/10 backdrop-blur-md border border-white/20-b border-white/20 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Available Deliveries</h1>
-              <p className="text-sm text-gray-600">AI-matched opportunities for you</p>
+              <h1 className="text-2xl font-bold text-white">Available Deliveries</h1>
+              <p className="text-sm text-gray-300">AI-matched opportunities for you</p>
             </div>
             <button
               onClick={() => router.back()}
-              className="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors font-semibold"
+              className="px-6 py-2 text-gray-200 hover:bg-white/20 rounded-lg transition-colors font-semibold"
             >
               Back to Dashboard
             </button>
@@ -81,17 +81,17 @@ export default function AvailableDeliveriesPage() {
 
         {/* Available Deliveries */}
         {availableShipments.length === 0 ? (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-sm border border-white/20 p-12 text-center">
             <Package className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">No Available Deliveries</h2>
-            <p className="text-gray-600">Check back soon for new opportunities</p>
+            <h2 className="text-2xl font-bold text-white mb-2">No Available Deliveries</h2>
+            <p className="text-gray-300">Check back soon for new opportunities</p>
           </div>
         ) : (
           <div className="space-y-6">
             {availableShipments.map((shipment) => (
               <div
                 key={shipment.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all"
+                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-sm border border-white/20 overflow-hidden hover:shadow-lg transition-all"
               >
                 <div className="p-6">
                   {/* Header with Match Score */}
@@ -106,12 +106,12 @@ export default function AvailableDeliveriesPage() {
                             ? 'bg-red-100 text-red-700'
                             : shipment.priority === 'urgent'
                             ? 'bg-orange-100 text-orange-700'
-                            : 'bg-gray-100 text-gray-700'
+                            : 'bg-gray-100 text-gray-200'
                         }`}>
                           {shipment.priority.charAt(0).toUpperCase() + shipment.priority.slice(1)}
                         </span>
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-gray-300">
                         Scheduled: {new Date(shipment.scheduledPickupTime).toLocaleString()}
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export default function AvailableDeliveriesPage() {
                         <Sparkles className="w-5 h-5 text-blue-600" />
                         <span className="text-3xl font-bold text-blue-600">{shipment.matchScore}%</span>
                       </div>
-                      <div className="text-xs text-gray-600">AI Match Score</div>
+                      <div className="text-xs text-gray-300">AI Match Score</div>
                     </div>
                   </div>
 
@@ -130,9 +130,9 @@ export default function AvailableDeliveriesPage() {
                       <div className="flex items-start space-x-3 mb-4">
                         <MapPin className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
                         <div>
-                          <div className="text-xs text-gray-500 mb-1">Pickup Location</div>
-                          <div className="text-sm font-semibold text-gray-900">{shipment.pickup.address}</div>
-                          <div className="text-xs text-gray-600 mt-1">
+                          <div className="text-xs text-gray-400 mb-1">Pickup Location</div>
+                          <div className="text-sm font-semibold text-white">{shipment.pickup.address}</div>
+                          <div className="text-xs text-gray-300 mt-1">
                             Contact: {shipment.pickup.contactName || 'N/A'}
                           </div>
                         </div>
@@ -140,9 +140,9 @@ export default function AvailableDeliveriesPage() {
                       <div className="flex items-start space-x-3">
                         <MapPin className="w-5 h-5 text-red-600 flex-shrink-0 mt-1" />
                         <div>
-                          <div className="text-xs text-gray-500 mb-1">Delivery Location</div>
-                          <div className="text-sm font-semibold text-gray-900">{shipment.dropoff.address}</div>
-                          <div className="text-xs text-gray-600 mt-1">
+                          <div className="text-xs text-gray-400 mb-1">Delivery Location</div>
+                          <div className="text-sm font-semibold text-white">{shipment.dropoff.address}</div>
+                          <div className="text-xs text-gray-300 mt-1">
                             Contact: {shipment.dropoff.contactName || 'N/A'}
                           </div>
                         </div>
@@ -155,10 +155,10 @@ export default function AvailableDeliveriesPage() {
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center space-x-2">
                             <Package className="w-4 h-4 text-blue-600" />
-                            <span className="text-sm font-semibold text-gray-900">Specimen Details</span>
+                            <span className="text-sm font-semibold text-white">Specimen Details</span>
                           </div>
                         </div>
-                        <div className="space-y-1 text-xs text-gray-700">
+                        <div className="space-y-1 text-xs text-gray-200">
                           <div>Type: {shipment.specimens[0].type}</div>
                           <div>Quantity: {shipment.specimens[0].quantity} {shipment.specimens[0].unit}</div>
                           <div className="flex items-center space-x-1">
@@ -172,7 +172,7 @@ export default function AvailableDeliveriesPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
                             <DollarSign className="w-4 h-4 text-green-600" />
-                            <span className="text-sm font-semibold text-gray-900">Estimated Earnings</span>
+                            <span className="text-sm font-semibold text-white">Estimated Earnings</span>
                           </div>
                           <span className="text-2xl font-bold text-green-600">
                             ${shipment.estimatedEarnings.toFixed(2)}
@@ -184,7 +184,7 @@ export default function AvailableDeliveriesPage() {
 
                   {/* Match Reasons */}
                   <div className="mb-6">
-                    <div className="text-sm font-semibold text-gray-700 mb-2">Why this is a good match:</div>
+                    <div className="text-sm font-semibold text-gray-200 mb-2">Why this is a good match:</div>
                     <div className="flex flex-wrap gap-2">
                       {shipment.matchReasons.map((reason: string, idx: number) => (
                         <span key={idx} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold flex items-center space-x-1">
@@ -205,7 +205,7 @@ export default function AvailableDeliveriesPage() {
                     </button>
                     <button
                       onClick={() => setSelectedShipment(selectedShipment === shipment.id ? null : shipment.id)}
-                      className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-semibold"
+                      className="px-6 py-3 border border-white/30 text-gray-200 rounded-lg hover:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 transition-colors font-semibold"
                     >
                       View Details
                     </button>
@@ -213,23 +213,23 @@ export default function AvailableDeliveriesPage() {
 
                   {/* Expanded Details */}
                   {selectedShipment === shipment.id && (
-                    <div className="mt-6 pt-6 border-t border-gray-200">
-                      <h4 className="font-bold text-gray-900 mb-3">Additional Information</h4>
+                    <div className="mt-6 pt-6 border-t border-white/20">
+                      <h4 className="font-bold text-white mb-3">Additional Information</h4>
                       <div className="grid md:grid-cols-2 gap-4 text-sm">
                         <div>
-                          <div className="text-gray-600 mb-1">Shipper:</div>
-                          <div className="font-semibold text-gray-900">{shipment.shipperName}</div>
-                          <div className="text-gray-600">{shipment.shipperCompany}</div>
+                          <div className="text-gray-300 mb-1">Shipper:</div>
+                          <div className="font-semibold text-white">{shipment.shipperName}</div>
+                          <div className="text-gray-300">{shipment.shipperCompany}</div>
                         </div>
                         <div>
-                          <div className="text-gray-600 mb-1">Study Protocol:</div>
-                          <div className="font-semibold text-gray-900">
+                          <div className="text-gray-300 mb-1">Study Protocol:</div>
+                          <div className="font-semibold text-white">
                             {shipment.specimens[0].studyProtocol || 'Not specified'}
                           </div>
                         </div>
                         {shipment.specimens[0].specialHandling && shipment.specimens[0].specialHandling.length > 0 && (
                           <div className="md:col-span-2">
-                            <div className="text-gray-600 mb-2">Special Handling Requirements:</div>
+                            <div className="text-gray-300 mb-2">Special Handling Requirements:</div>
                             <div className="flex flex-wrap gap-2">
                               {shipment.specimens[0].specialHandling.map((req: string, idx: number) => (
                                 <span key={idx} className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">

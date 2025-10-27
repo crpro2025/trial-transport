@@ -80,7 +80,7 @@ export default function DriverProfileEnhancedPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <DashboardNavigation role="driver" />
       <DemoDataBadge />
 
@@ -88,8 +88,8 @@ export default function DriverProfileEnhancedPage() {
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Driver Profile</h1>
-            <p className="text-gray-600 mt-2">Manage your profile, vehicle, and certifications</p>
+            <h1 className="text-3xl font-bold text-white">Driver Profile</h1>
+            <p className="text-gray-300 mt-2">Manage your profile, vehicle, and certifications</p>
           </div>
           {!isEditing ? (
             <button
@@ -102,7 +102,7 @@ export default function DriverProfileEnhancedPage() {
             <div className="flex gap-3">
               <button
                 onClick={handleCancel}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium flex items-center gap-2"
+                className="px-6 py-2 border border-white/30 text-gray-200 rounded-lg hover:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 transition-colors font-medium flex items-center gap-2"
               >
                 <X className="w-4 h-4" />
                 Cancel
@@ -119,8 +119,8 @@ export default function DriverProfileEnhancedPage() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
-          <div className="border-b border-gray-200">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 mb-6">
+          <div className="border-b border-white/20">
             <nav className="flex -mb-px">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
@@ -132,7 +132,7 @@ export default function DriverProfileEnhancedPage() {
                       flex items-center gap-2 px-6 py-4 border-b-2 font-medium text-sm transition-colors
                       ${activeTab === tab.id
                         ? 'border-blue-500 text-blue-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-white/30'
                       }
                     `}
                   >
@@ -148,7 +148,7 @@ export default function DriverProfileEnhancedPage() {
             {/* Personal Info Tab */}
             {activeTab === 'personal' && (
               <div className="space-y-6">
-                <div className="flex flex-col items-center pb-6 border-b border-gray-200">
+                <div className="flex flex-col items-center pb-6 border-b border-white/20">
                   <PhotoUpload
                     onUpload={(file, preview) => setProfilePhoto(preview)}
                     onRemove={() => setProfilePhoto(null)}
@@ -160,7 +160,7 @@ export default function DriverProfileEnhancedPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       First Name
                     </label>
                     <input
@@ -169,12 +169,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       Last Name
                     </label>
                     <input
@@ -183,12 +183,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       Email
                     </label>
                     <input
@@ -197,12 +197,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       Phone
                     </label>
                     <input
@@ -211,12 +211,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       Address
                     </label>
                     <input
@@ -225,12 +225,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.address}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       City
                     </label>
                     <input
@@ -239,12 +239,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.city}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       State
                     </label>
                     <input
@@ -253,12 +253,12 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.state}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-200 mb-2">
                       ZIP Code
                     </label>
                     <input
@@ -267,7 +267,7 @@ export default function DriverProfileEnhancedPage() {
                       value={formData.zipCode}
                       onChange={handleInputChange}
                       disabled={!isEditing}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                      className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                     />
                   </div>
                 </div>
@@ -278,10 +278,10 @@ export default function DriverProfileEnhancedPage() {
             {activeTab === 'vehicle' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Vehicle Information</h3>
+                  <h3 className="text-lg font-semibold text-white mb-4">Vehicle Information</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         Make
                       </label>
                       <input
@@ -290,12 +290,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.vehicleMake}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         Model
                       </label>
                       <input
@@ -304,12 +304,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.vehicleModel}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         Year
                       </label>
                       <input
@@ -318,12 +318,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.vehicleYear}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         Color
                       </label>
                       <input
@@ -332,12 +332,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.vehicleColor}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         License Plate
                       </label>
                       <input
@@ -346,12 +346,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.licensePlate}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         VIN
                       </label>
                       <input
@@ -360,14 +360,14 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.vehicleVIN}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 pt-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Vehicle Photos</h3>
+                <div className="border-t border-white/20 pt-8">
+                  <h3 className="text-lg font-semibold text-white mb-4">Vehicle Photos</h3>
                   <MultiPhotoUpload
                     onPhotosChange={setVehiclePhotos}
                     maxPhotos={10}
@@ -375,8 +375,8 @@ export default function DriverProfileEnhancedPage() {
                   />
                 </div>
 
-                <div className="border-t border-gray-200 pt-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Vehicle Video Tour</h3>
+                <div className="border-t border-white/20 pt-8">
+                  <h3 className="text-lg font-semibold text-white mb-4">Vehicle Video Tour</h3>
                   <VideoUpload
                     onUpload={(file, preview) => setVehicleVideo(preview)}
                     onRemove={() => setVehicleVideo(null)}
@@ -386,11 +386,11 @@ export default function DriverProfileEnhancedPage() {
                   />
                 </div>
 
-                <div className="border-t border-gray-200 pt-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Equipment</h3>
+                <div className="border-t border-white/20 pt-8">
+                  <h3 className="text-lg font-semibold text-white mb-4">Equipment</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         Cooler Type
                       </label>
                       <input
@@ -399,12 +399,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.coolerType}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         Temperature Monitor
                       </label>
                       <input
@@ -413,12 +413,12 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.tempMonitor}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2">
                         GPS Device
                       </label>
                       <input
@@ -427,7 +427,7 @@ export default function DriverProfileEnhancedPage() {
                         value={formData.gpsDevice}
                         onChange={handleInputChange}
                         disabled={!isEditing}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:text-gray-500"
+                        className="w-full px-4 py-2 border border-white/30 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 disabled:text-gray-400"
                       />
                     </div>
                   </div>
@@ -439,7 +439,7 @@ export default function DriverProfileEnhancedPage() {
             {activeTab === 'documents' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Required Documents</h3>
+                  <h3 className="text-lg font-semibold text-white mb-4">Required Documents</h3>
                   <DocumentUpload
                     onUpload={setDocuments}
                     maxFiles={10}
@@ -466,23 +466,23 @@ export default function DriverProfileEnhancedPage() {
         </div>
 
         {/* Performance Stats */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Performance Metrics</h3>
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6">
+          <h3 className="text-lg font-semibold text-white mb-4">Performance Metrics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
-              <p className="text-sm text-gray-600">On-Time Rate</p>
+              <p className="text-sm text-gray-300">On-Time Rate</p>
               <p className="text-2xl font-bold text-green-600">98.2%</p>
             </div>
             <div>
-              <p className="text-sm text-gray-600">Temperature Compliance</p>
+              <p className="text-sm text-gray-300">Temperature Compliance</p>
               <p className="text-2xl font-bold text-green-600">99.5%</p>
             </div>
             <div>
-              <p className="text-sm text-gray-600">Total Deliveries</p>
+              <p className="text-sm text-gray-300">Total Deliveries</p>
               <p className="text-2xl font-bold text-blue-600">247</p>
             </div>
             <div>
-              <p className="text-sm text-gray-600">Customer Rating</p>
+              <p className="text-sm text-gray-300">Customer Rating</p>
               <p className="text-2xl font-bold text-yellow-600">4.9★</p>
             </div>
           </div>

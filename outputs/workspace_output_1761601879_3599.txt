@@ -1,0 +1,50 @@
+export const documentData: { [key: string]: { title: string; content: string } } = {
+  'pitch-deck': {
+    title: 'Investor Pitch Deck',
+    content: `# 🚀 TRIAL TRANSPORT - INVESTOR PITCH DECK
+## Clinical Research Pro Corporation
+
+**Confidential - For Investment Discussion Only**  
+**Date:** October 2025  
+**Seeking:** $4M Seed Round at $12M Pre-Money Valuation
+
+---
+
+# SLIDE 1: COVER SLIDE
+
+\`\`\`
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│              🚀 TRIAL TRANSPORT                         │
+│                                                         │
+│     Revolutionizing Clinical Trial Logistics           │
+│            with AI-Powered Solutions                    │
+│                                                         │
+│                                                         │
+│         Clinical Research Pro Corporation              │
+│                                                         │
+│              SEED ROUND - $4M                          │
+│           $12M Pre-Money Valuation                     │
+│                                                         │
+│                                                         │
+│         jason@clinicalresearchpro.com                  │
+│              (470) 476-1038                            │
+│                                                         │
+│         jess@clinicalresearchpro.com                   │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+\`\`\`
+
+---
+
+# SLIDE 2: THE PROBLEM
+
+## 💔 Clinical Trials Are Failing Due to Logistics
+
+### **The Crisis:**
+- **80% of clinical trials** fail to meet enrollment timelines
+- **$1.3M per day** lost for every delayed trial
+- **30% of specimens** arrive compromised or late
+- **$8.2B market** plagued by inefficiency
+
+### **Root Causes:**

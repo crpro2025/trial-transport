@@ -136,7 +136,7 @@ export default function ShipperBillingPage() {
             </div>
             <p className="text-gray-400 text-sm mb-1">This Month</p>
             <p className="text-3xl font-bold text-white">{usageStats.thisMonth}</p>
-            <p className="text-gray-500 text-xs mt-1">shipments</p>
+            <p className="text-gray-400 text-xs mt-1">shipments</p>
           </div>
 
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
@@ -145,7 +145,7 @@ export default function ShipperBillingPage() {
             </div>
             <p className="text-gray-400 text-sm mb-1">Last Month</p>
             <p className="text-3xl font-bold text-white">{usageStats.lastMonth}</p>
-            <p className="text-gray-500 text-xs mt-1">shipments</p>
+            <p className="text-gray-400 text-xs mt-1">shipments</p>
           </div>
 
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
@@ -154,7 +154,7 @@ export default function ShipperBillingPage() {
             </div>
             <p className="text-gray-400 text-sm mb-1">Avg Per Month</p>
             <p className="text-3xl font-bold text-white">{usageStats.avgPerMonth}</p>
-            <p className="text-gray-500 text-xs mt-1">shipments</p>
+            <p className="text-gray-400 text-xs mt-1">shipments</p>
           </div>
 
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
@@ -163,7 +163,7 @@ export default function ShipperBillingPage() {
             </div>
             <p className="text-gray-400 text-sm mb-1">Total Spent</p>
             <p className="text-3xl font-bold text-white">${usageStats.totalSpent}</p>
-            <p className="text-gray-500 text-xs mt-1">all time</p>
+            <p className="text-gray-400 text-xs mt-1">all time</p>
           </div>
         </div>
 

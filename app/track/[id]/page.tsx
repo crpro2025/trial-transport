@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Navigation } from '@/components/Navigation';
+import { DashboardNavigation } from '@/components/DashboardNavigation';
+import Footer from '@/components/Footer';
 import { MapPin, Thermometer, Clock, Package, CheckCircle, AlertCircle, TrendingUp, Navigation as NavIcon } from 'lucide-react';
 
 export default function TrackingPage() {
@@ -103,7 +104,7 @@ export default function TrackingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0e27] via-[#1a1f3a] to-[#0a0e27]">
-      <Navigation />
+      <DashboardNavigation role="shipper" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
@@ -383,4 +384,5 @@ export default function TrackingPage() {
       </div>
     </div>
   );
+      <Footer />
 }

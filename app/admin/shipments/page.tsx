@@ -45,7 +45,7 @@ export default function AdminShipments() {
       case 'in_transit': return 'text-blue-400 bg-blue-500/20';
       case 'pending': return 'text-yellow-400 bg-yellow-500/20';
       case 'cancelled': return 'text-red-400 bg-red-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      default: return 'text-gray-400 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-9000/20';
     }
   };
 
@@ -54,7 +54,7 @@ export default function AdminShipments() {
       case 'critical': return 'text-red-400 bg-red-500/20';
       case 'urgent': return 'text-orange-400 bg-orange-500/20';
       case 'standard': return 'text-blue-400 bg-blue-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      default: return 'text-gray-400 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-9000/20';
     }
   };
 
@@ -223,7 +223,7 @@ export default function AdminShipments() {
                     <tr key={shipment.id} className="hover:bg-white/5 transition-colors">
                       <td className="px-6 py-4">
                         <div className="font-mono text-sm text-blue-400">{shipment.trackingNumber}</div>
-                        <div className="text-xs text-gray-500">{new Date(shipment.createdAt).toLocaleDateString()}</div>
+                        <div className="text-xs text-gray-400">{new Date(shipment.createdAt).toLocaleDateString()}</div>
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-white">{shipment.pickup.address.split(',')[0]}</div>
@@ -262,7 +262,7 @@ export default function AdminShipments() {
 
             {filteredShipments.length === 0 && (
               <div className="text-center py-12">
-                <Package className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+                <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                 <p className="text-gray-400">No shipments found matching your filters</p>
               </div>
             )}

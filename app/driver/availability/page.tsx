@@ -182,7 +182,7 @@ export default function DriverAvailabilityPage() {
                   onChange={(e) => setServiceRadius(parseInt(e.target.value))}
                   className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-gray-500 text-xs mt-2">
+                <div className="flex justify-between text-gray-400 text-xs mt-2">
                   <span>5 mi</span>
                   <span>25 mi</span>
                   <span>50 mi</span>

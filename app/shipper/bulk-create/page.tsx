@@ -42,14 +42,14 @@ export default function BulkCreateShipmentPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <DashboardNavigation role="shipper" />
       <DemoDataBadge />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Bulk Shipment Creation</h1>
-          <p className="text-gray-600 mt-2">Upload a CSV file to create multiple shipments at once</p>
+          <h1 className="text-3xl font-bold text-white">Bulk Shipment Creation</h1>
+          <p className="text-gray-300 mt-2">Upload a CSV file to create multiple shipments at once</p>
         </div>
 
         {/* Instructions */}
@@ -65,15 +65,15 @@ export default function BulkCreateShipmentPage() {
         </div>
 
         {/* Download Template */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-green-100 rounded-lg">
                 <FileSpreadsheet className="w-6 h-6 text-green-600" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">CSV Template</h3>
-                <p className="text-sm text-gray-600">Download the template to get started</p>
+                <h3 className="font-semibold text-white">CSV Template</h3>
+                <p className="text-sm text-gray-300">Download the template to get started</p>
               </div>
             </div>
             <button
@@ -87,8 +87,8 @@ export default function BulkCreateShipmentPage() {
         </div>
 
         {/* Upload Area */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-          <h3 className="font-semibold text-gray-900 mb-4">Upload CSV File</h3>
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6 mb-6">
+          <h3 className="font-semibold text-white mb-4">Upload CSV File</h3>
           
           <DocumentUpload
             onUpload={(docs) => setUploadedFile(docs[0])}
@@ -123,21 +123,21 @@ export default function BulkCreateShipmentPage() {
 
         {/* Results */}
         {results && (
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <h3 className="font-semibold text-gray-900 mb-6">Processing Results</h3>
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-sm border border-white/20 p-6">
+            <h3 className="font-semibold text-white mb-6">Processing Results</h3>
             
             <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="bg-gray-50 rounded-lg p-4 text-center">
-                <p className="text-3xl font-bold text-gray-900">{results.total}</p>
-                <p className="text-sm text-gray-600 mt-1">Total Rows</p>
+              <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-lg p-4 text-center">
+                <p className="text-3xl font-bold text-white">{results.total}</p>
+                <p className="text-sm text-gray-300 mt-1">Total Rows</p>
               </div>
               <div className="bg-green-50 rounded-lg p-4 text-center">
                 <p className="text-3xl font-bold text-green-600">{results.successful}</p>
-                <p className="text-sm text-gray-600 mt-1">Successful</p>
+                <p className="text-sm text-gray-300 mt-1">Successful</p>
               </div>
               <div className="bg-red-50 rounded-lg p-4 text-center">
                 <p className="text-3xl font-bold text-red-600">{results.failed}</p>
-                <p className="text-sm text-gray-600 mt-1">Failed</p>
+                <p className="text-sm text-gray-300 mt-1">Failed</p>
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export default function BulkCreateShipmentPage() {
                   setUploadedFile(null);
                   setResults(null);
                 }}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                className="px-6 py-2 border border-white/30 text-gray-200 rounded-lg hover:bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 transition-colors font-medium"
               >
                 Upload Another File
               </button>

@@ -1,0 +1,4 @@
+total 16
+drwxr-xr-x 2 root root    30 Oct 23 16:53 .
+drwxr-xr-x 3 root root    28 Oct 23 16:53 ..
+-rw-r--r-- 1 root root 14630 Oct 23 16:53 page.tsx
