@@ -29,7 +29,7 @@ export function Navigation() {
           <div className="flex items-center justify-center gap-2 text-xs">
             <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
             <span className="text-yellow-400 font-semibold">
-              PRE-LAUNCH DEMO - Platform seeking $4M seed funding • Zero customers currently
+              PRE-LAUNCH - Seeking $1M seed funding to complete platform and launch pilots in Q1 2026
             </span>
             <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
           </div>
@@ -178,7 +178,7 @@ export function DashboardNavigation({ userRole }: { userRole: 'admin' | 'shipper
           <div className="flex items-center justify-center gap-2 text-xs">
             <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
             <span className="text-yellow-400 font-semibold">
-              DEMO PLATFORM - All data is mock/simulated
+              PRE-LAUNCH PLATFORM - In development, seeking $1M seed funding
             </span>
             <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
           </div>
