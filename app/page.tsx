@@ -27,19 +27,19 @@ export default function EnhancedHomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full">
-              <span className="text-blue-400 font-medium">🚀 The Platform Competitors Should Have Built 5 Years Ago</span>
+              <span className="text-blue-400 font-medium">🚀 The Platform Competitors Should Have Built 10 Years Ago</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-                2024 AI-Powered
+                2025 AI-Powered
               </span>
               <br />
               <span className="text-white">Clinical Trial Logistics</span>
             </h1>
             
             <p className="text-xl text-gray-300 mb-4 leading-relaxed">
-              While major competitors still use <span className="text-red-400 font-semibold line-through">2015-era manual processes</span>,
+              While major competitors still use <span className="text-red-400 font-semibold line-through">2015-era manual processes (10 years behind)</span>,
               we've built the intelligent platform that transforms clinical trial logistics from a pain point into a competitive advantage.
             </p>
 
@@ -79,8 +79,8 @@ export default function EnhancedHomePage() {
               Why We're <span className="text-cyan-400">Fundamentally Different</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              While competitors claim innovation, they're still using 2015 technology. 
-              We're building the platform they should have built 5 years ago.
+              While competitors claim innovation, they're still using 2015 technology (10 years behind). 
+              We're building the platform they should have built 10 years ago.
             </p>
           </div>
 

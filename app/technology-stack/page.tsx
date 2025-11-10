@@ -12,18 +12,18 @@ export default function TechnologyStackPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-full">
-            <span className="text-purple-400 font-medium">🤖 2024 AI-Powered Platform</span>
+            <span className="text-purple-400 font-medium">🤖 2025 AI-Powered Platform</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Technology <span className="text-purple-400">Stack</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            While competitors use 2015-era manual processes, we've built a cutting-edge AI-powered platform 
+            While competitors use 2015-era manual processes (10 years behind), we've built a cutting-edge 2025 AI-powered platform 
             that transforms clinical trial logistics from reactive to proactive.
           </p>
         </div>
 
-        {/* The Gap: 2015 vs 2024 */}
+        {/* The Gap: 2015 vs 2025 */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {/* 2015 Era */}
           <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-2xl p-8">
@@ -79,7 +79,7 @@ export default function TechnologyStackPage() {
           {/* 2024 Platform */}
           <div className="bg-gradient-to-br from-green-900/40 to-emerald-900/40 border border-green-500/30 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-green-400 mb-6 flex items-center gap-2">
-              <span>✅</span> Trial Transport (2024 AI-Powered)
+              <span>✅</span> Trial Transport (2025 AI-Powered)
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">

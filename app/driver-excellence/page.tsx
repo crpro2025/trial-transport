@@ -27,11 +27,11 @@ export default function DriverExcellencePage() {
         <div className="bg-gradient-to-br from-orange-900/40 to-red-900/40 border border-orange-500/30 rounded-2xl p-8 mb-12">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
-              40+ Hours Specialized Training vs. 2-4 Hours Generic Training
+              Comprehensive Training Program vs. 2-4 Hours Generic Training
             </h2>
             <p className="text-xl text-gray-300">
-              Our drivers aren't just delivery personnel - they're certified professionals who understand 
-              GDP compliance, temperature control, chain of custody, and the critical importance of their role.
+              16-20 hours essential training + 30-day supervised period + ongoing professional development 
+              vs. competitors' minimal 2-4 hour orientation with no supervision or ongoing education.
             </p>
           </div>
         </div>
@@ -47,8 +47,8 @@ export default function DriverExcellencePage() {
               <li className="flex items-start gap-3">
                 <span className="text-red-400 text-xl">❌</span>
                 <div>
-                  <div className="font-semibold text-white">2-4 Hours Generic Training</div>
-                  <div className="text-gray-400 text-sm">Basic courier operations only</div>
+                  <div className="font-semibold text-white">2-4 Hours Total Training</div>
+                  <div className="text-gray-400 text-sm">Basic courier operations, no ongoing education</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -98,8 +98,8 @@ export default function DriverExcellencePage() {
               <li className="flex items-start gap-3">
                 <span className="text-green-400 text-xl">✅</span>
                 <div>
-                  <div className="font-semibold text-white">40+ Hours Specialized Training</div>
-                  <div className="text-gray-400 text-sm">Comprehensive clinical trial logistics curriculum</div>
+                  <div className="font-semibold text-white">16-20 Hours Essential + Ongoing Training</div>
+                  <div className="text-gray-400 text-sm">Start working quickly, continue learning on the job</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -144,84 +144,93 @@ export default function DriverExcellencePage() {
         {/* Training Curriculum */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Comprehensive Training Curriculum (40+ Hours)
+            Tiered Training Program - Start Working in 3-4 Days
           </h2>
+          <p className="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
+            Our practical approach gets drivers working quickly while ensuring quality through supervised operations and ongoing professional development.
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Module 1 */}
             <div className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 border border-blue-500/30 rounded-xl p-6">
               <div className="text-3xl mb-3">📋</div>
-              <h3 className="text-xl font-bold text-white mb-2">GDP/GMP Compliance</h3>
-              <div className="text-cyan-400 font-semibold mb-3">8 Hours</div>
+              <h3 className="text-xl font-bold text-white mb-2">Phase 1: Essential Training</h3>
+              <div className="text-cyan-400 font-semibold mb-3">16-20 Hours (Week 1)</div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• Good Distribution Practice requirements</li>
-                <li>• Documentation and record-keeping</li>
-                <li>• Quality management systems</li>
-                <li>• Regulatory compliance (FDA, EMA, ICH)</li>
+                <li>• Safety &amp; compliance fundamentals</li>
+                <li>• Technology &amp; systems training</li>
+                <li>• Hands-on operations practice</li>
+                <li>• Customer service basics</li>
+                <li>• 3-5 supervised practice deliveries</li>
               </ul>
             </div>
 
             {/* Module 2 */}
             <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-500/30 rounded-xl p-6">
-              <div className="text-3xl mb-3">❄️</div>
-              <h3 className="text-xl font-bold text-white mb-2">Temperature Control</h3>
-              <div className="text-purple-400 font-semibold mb-3">10 Hours + Certification</div>
+              <div className="text-3xl mb-3">🚗</div>
+              <h3 className="text-xl font-bold text-white mb-2">Phase 2: Supervised Operations</h3>
+              <div className="text-purple-400 font-semibold mb-3">First 30 Days</div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• Cold chain management principles</li>
-                <li>• Temperature monitoring systems</li>
-                <li>• Emergency response procedures</li>
-                <li>• Equipment operation and maintenance</li>
+                <li>• 10+ supervised deliveries with mentor</li>
+                <li>• Weekly check-ins with operations team</li>
+                <li>• AI-powered performance monitoring</li>
+                <li>• On-the-job learning with real scenarios</li>
+                <li>• Micro-learning modules via app</li>
               </ul>
             </div>
 
             {/* Module 3 */}
             <div className="bg-gradient-to-br from-green-900/40 to-emerald-900/40 border border-green-500/30 rounded-xl p-6">
-              <div className="text-3xl mb-3">🔗</div>
-              <h3 className="text-xl font-bold text-white mb-2">Chain of Custody</h3>
-              <div className="text-green-400 font-semibold mb-3">8 Hours</div>
+              <div className="text-3xl mb-3">🎓</div>
+              <h3 className="text-xl font-bold text-white mb-2">Phase 3: Advanced Certification</h3>
+              <div className="text-green-400 font-semibold mb-3">Days 31-90</div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• Clinical trial phases and requirements</li>
-                <li>• Chain of custody procedures</li>
-                <li>• Sample handling and labeling</li>
-                <li>• Site coordination protocols</li>
+                <li>• Self-paced online modules (10-12 hours)</li>
+                <li>• Advanced GDP/GMP compliance</li>
+                <li>• Complex temperature scenarios</li>
+                <li>• 50+ successful deliveries completed</li>
+                <li>• Full certification achieved at 90 days</li>
               </ul>
             </div>
 
             {/* Module 4 */}
             <div className="bg-gradient-to-br from-orange-900/40 to-red-900/40 border border-orange-500/30 rounded-xl p-6">
-              <div className="text-3xl mb-3">🛡️</div>
-              <h3 className="text-xl font-bold text-white mb-2">Safety & Security</h3>
-              <div className="text-orange-400 font-semibold mb-3">6 Hours</div>
+              <div className="text-3xl mb-3">📚</div>
+              <h3 className="text-xl font-bold text-white mb-2">Phase 4: Ongoing Development</h3>
+              <div className="text-orange-400 font-semibold mb-3">Continuous</div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• Product security measures</li>
-                <li>• Emergency response training</li>
-                <li>• Incident reporting procedures</li>
-                <li>• Risk management</li>
+                <li>• 8 hours/year continuing education</li>
+                <li>• Quarterly refresher training</li>
+                <li>• Monthly safety meetings</li>
+                <li>• Annual recertification exam</li>
+                <li>• Optional advanced specializations</li>
               </ul>
             </div>
 
             {/* Module 5 */}
             <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-500/30 rounded-xl p-6">
-              <div className="text-3xl mb-3">📱</div>
-              <h3 className="text-xl font-bold text-white mb-2">Technology Systems</h3>
-              <div className="text-cyan-400 font-semibold mb-3">4 Hours</div>
+              <div className="text-3xl mb-3">⚡</div>
+              <h3 className="text-xl font-bold text-white mb-2">Key Advantage</h3>
+              <div className="text-cyan-400 font-semibold mb-3">Start Earning Quickly</div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• GPS tracking systems</li>
-                <li>• Temperature monitoring devices</li>
-                <li>• Mobile app operation</li>
-                <li>• Real-time communication tools</li>
+                <li>• Working within 3-4 days</li>
+                <li>• Earning while learning</li>
+                <li>• Supervised for quality assurance</li>
+                <li>• Career progression path</li>
+                <li>• Still far superior to competitors</li>
               </ul>
             </div>
 
             {/* Module 6 */}
             <div className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 border border-yellow-500/30 rounded-xl p-6">
-              <div className="text-3xl mb-3">🤝</div>
-              <h3 className="text-xl font-bold text-white mb-2">Customer Service</h3>
-              <div className="text-yellow-400 font-semibold mb-3">4 Hours</div>
+              <div className="text-3xl mb-3">🎯</div>
+              <h3 className="text-xl font-bold text-white mb-2">Total Training Investment</h3>
+              <div className="text-yellow-400 font-semibold mb-3">30-35 Hours (90 Days)</div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• Professional appearance and conduct</li>
-                <li>• Effective communication skills</li>
-                <li>• Site etiquette and protocols</li>
-                <li>• Confidentiality and HIPAA</li>
+                <li>• 16-20 hours initial (Week 1)</li>
+                <li>• 10-12 hours advanced (self-paced)</li>
+                <li>• Supervised on-the-job learning</li>
+                <li>• Ongoing professional development</li>
+                <li>• vs. Competitors: 2-4 hours total</li>
               </ul>
             </div>
           </div>
@@ -238,14 +247,14 @@ export default function DriverExcellencePage() {
               <div className="text-center mb-4">
                 <div className="text-4xl mb-2">🥉</div>
                 <h3 className="text-xl font-bold text-white">Level 1</h3>
-                <div className="text-cyan-400 font-semibold">Certified Clinical Trial Driver</div>
+                <div className="text-cyan-400 font-semibold">Certified Driver</div>
               </div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• All 6 modules completed</li>
-                <li>• 85%+ assessment scores</li>
-                <li>• 20 supervised deliveries</li>
+                <li>• Essential training completed (16-20 hrs)</li>
+                <li>• 10 supervised deliveries</li>
+                <li>• Technology proficiency verified</li>
                 <li>• Background checks cleared</li>
-                <li>• Equipment operation certified</li>
+                <li>• Can start working in 3-4 days</li>
               </ul>
             </div>
 
@@ -254,14 +263,14 @@ export default function DriverExcellencePage() {
               <div className="text-center mb-4">
                 <div className="text-4xl mb-2">🥈</div>
                 <h3 className="text-xl font-bold text-white">Level 2</h3>
-                <div className="text-purple-400 font-semibold">Senior Clinical Trial Driver</div>
+                <div className="text-purple-400 font-semibold">Advanced Driver</div>
               </div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• 6+ months experience</li>
-                <li>• 100+ successful deliveries</li>
+                <li>• After 90 days</li>
+                <li>• All Phase 3 training completed</li>
+                <li>• 50+ successful deliveries</li>
                 <li>• Zero major incidents</li>
-                <li>• Advanced certifications</li>
-                <li>• Can train new drivers</li>
+                <li>• Advanced certifications earned</li>
               </ul>
             </div>
 
@@ -270,14 +279,14 @@ export default function DriverExcellencePage() {
               <div className="text-center mb-4">
                 <div className="text-4xl mb-2">🥇</div>
                 <h3 className="text-xl font-bold text-white">Level 3</h3>
-                <div className="text-yellow-400 font-semibold">Master Clinical Trial Driver</div>
+                <div className="text-yellow-400 font-semibold">Senior Driver</div>
               </div>
               <ul className="text-gray-300 text-sm space-y-2">
-                <li>• 2+ years experience</li>
-                <li>• 500+ successful deliveries</li>
-                <li>• 99.5%+ on-time rate</li>
-                <li>• Zero compliance violations</li>
-                <li>• Handle ultra-complex shipments</li>
+                <li>• After 6+ months</li>
+                <li>• 100+ successful deliveries</li>
+                <li>• 99%+ on-time rate</li>
+                <li>• Specialized certifications</li>
+                <li>• Can train new drivers</li>
               </ul>
             </div>
           </div>
