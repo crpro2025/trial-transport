@@ -18,9 +18,7 @@ export function Navigation() {
     { href: '/pricing', label: 'Pricing' },
     { href: '/ai-features', label: 'AI Features' },
     { href: '/investors', label: 'Investors' },
-    { href: '/exit-strategy', label: 'Exit Strategy' },
     { href: '/about', label: 'About' },
-    { href: '/roadmap', label: 'Roadmap' },
   ];
 
   return (
