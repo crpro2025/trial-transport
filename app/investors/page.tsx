@@ -61,8 +61,8 @@ export default function InvestorsPage() {
   ];
 
   const keyMetrics = [
-    { label: 'Seeking', value: '$4M', sublabel: 'Seed Round' },
-    { label: 'Valuation', value: '$12M', sublabel: 'Pre-Money' },
+    { label: 'Seeking', value: '$1M', sublabel: 'Seed Round' },
+    { label: 'Valuation', value: '$4M', sublabel: 'Pre-Money' },
     { label: 'Market Size', value: '$15.7B', sublabel: 'By 2030' },
     { label: 'Year 5 Revenue', value: '$26.3M', sublabel: 'Projected' },
   ];

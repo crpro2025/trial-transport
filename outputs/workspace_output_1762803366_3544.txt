@@ -1,0 +1,13 @@
+      title: 'Complete Materials Guide',
+      description: 'How to use all investor materials and next steps',
+      icon: TrendingUp,
+      file: '/docs/INVESTOR_MATERIALS_COMPLETE.md',
+      slug: 'materials-guide',
+      size: '4,000+ words',
+      type: 'Guide',
+      color: 'from-orange-500 to-red-600',
+    },
+  ];
+
+  const keyMetrics = [
+    { label: 'Seeking', value: '$4M', sublabel: 'Seed Round' },

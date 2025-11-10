@@ -1,0 +1,100 @@
+
+
+Cannot fetch data from service:
+fetch failed
+Profile fetch error: n [Error]: Dynamic server usage: Route /api/users/profile couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+    at l (/workspace/.next/server/chunks/8948.js:1:37249)
+    at d (/workspace/.next/server/chunks/9637.js:30:27522)
+    at s (/workspace/.next/server/chunks/9637.js:30:20511)
+    at l (/workspace/.next/server/app/api/users/profile/route.js:1:1351)
+    at /workspace/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:36264
+    at /workspace/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+    at NoopContextManager.with (/workspace/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/workspace/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/workspace/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/workspace/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854) {
+  description: "Route /api/users/profile couldn't be rendered statically because it used `headers`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+ ✓ Generating static pages (58/58)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    8.43 kB         105 kB
+├ ○ /_not-found                          876 B            88 kB
+├ ○ /about                               3.66 kB         100 kB
+├ ○ /admin/analytics                     2.84 kB         105 kB
+├ ○ /admin/billing                       2.82 kB         105 kB
+├ ○ /admin/dashboard                     5.56 kB        92.7 kB
+├ ○ /admin/profile                       2.54 kB         105 kB
+├ ○ /admin/shipments                     6.56 kB        93.7 kB
+├ ○ /admin/users                         5.25 kB        92.4 kB
+├ ○ /ai-features                         5.04 kB         101 kB
+├ ○ /analytics                           3.45 kB        97.4 kB
+├ ○ /api-marketplace                     3.16 kB        97.1 kB
+├ ƒ /api/analytics/dashboard             0 B                0 B
+├ ƒ /api/auth/[...nextauth]              0 B                0 B
+├ ƒ /api/credits/allocate                0 B                0 B
+├ ƒ /api/credits/balance                 0 B                0 B
+├ ƒ /api/credits/use                     0 B                0 B
+├ ƒ /api/driver/earnings-report          0 B                0 B
+├ ƒ /api/health                          0 B                0 B
+├ ƒ /api/messages                        0 B                0 B
+├ ƒ /api/messages/[id]/read              0 B                0 B
+├ ƒ /api/notifications                   0 B                0 B
+├ ƒ /api/pusher/auth                     0 B                0 B
+├ ƒ /api/shipments                       0 B                0 B
+├ ƒ /api/shipments/[id]                  0 B                0 B
+├ ƒ /api/stripe/cancel-subscription      0 B                0 B
+├ ƒ /api/stripe/create-payment-intent    0 B                0 B
+├ ƒ /api/stripe/create-subscription      0 B                0 B
+├ ƒ /api/stripe/payment-methods          0 B                0 B
+├ ƒ /api/stripe/webhook                  0 B                0 B
+├ ƒ /api/tracking/[trackingNumber]       0 B                0 B
+├ ƒ /api/upload                          0 B                0 B
+├ ƒ /api/users/profile                   0 B                0 B
+├ ƒ /api/users/register                  0 B                0 B
+├ ○ /competitive-analysis                5.14 kB         101 kB
+├ ○ /driver/availability                 2.94 kB         105 kB
+├ ○ /driver/available                    2.68 kB        94.9 kB
+├ ○ /driver/dashboard                    5.61 kB        99.5 kB
+├ ○ /driver/earnings                     2.84 kB         105 kB
+├ ○ /driver/messages                     2.49 kB         105 kB
+├ ○ /driver/profile                      6.04 kB        93.2 kB
+├ ○ /driver/profile-enhanced             5.81 kB         108 kB
+├ ○ /driver/training                     14.2 kB         101 kB
+├ ○ /exit-strategy                       3.69 kB         100 kB
+├ ○ /investors                           4.27 kB         101 kB
+├ ƒ /investors/documents/[slug]          27.3 kB         114 kB
+├ ○ /login                               3.39 kB        97.3 kB
+├ ○ /pricing                             4.01 kB         100 kB
+├ ○ /register                            4.71 kB        98.7 kB
+├ ○ /roadmap                             3.62 kB         100 kB
+├ ○ /shipper/billing                     2.51 kB         105 kB
+├ ○ /shipper/billing/payment-methods     2.33 kB         104 kB
+├ ○ /shipper/bulk-create                 3.49 kB         106 kB
+├ ○ /shipper/calculator                  3.54 kB        90.7 kB
+├ ○ /shipper/create-shipment             4.43 kB        96.7 kB
+├ ○ /shipper/dashboard                   5.37 kB        99.3 kB
+├ ○ /shipper/messages                    2.45 kB         105 kB
+├ ○ /shipper/profile                     2.91 kB         105 kB
+├ ○ /shipper/shipments                   5.05 kB        92.2 kB
+├ ƒ /shipper/shipments/[id]              3.46 kB         106 kB
+├ ○ /shipper/templates                   5.21 kB        92.3 kB
+├ ƒ /track/[id]                          4.83 kB         107 kB
+└ ○ /white-label                         3.29 kB        97.2 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/7023-a05991f544ec8242.js      31.5 kB
+  ├ chunks/fd9d1056-553e66303c45b91f.js  53.6 kB
+  └ other shared chunks (total)          1.96 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+npm notice
+npm notice New patch version of npm available! 11.6.0 -> 11.6.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+npm notice To update run: npm install -g npm@11.6.2
+npm notice
